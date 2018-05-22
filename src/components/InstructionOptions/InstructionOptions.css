@@ -1,0 +1,18 @@
+.table {
+  /* display: table; */
+  background-color:#FAF0CA;
+  /* padding: 5px;
+  margin: 0 auto; */
+  text-align: center;
+  /* width: 100%; */
+}
+
+.options ul {
+  list-style: none
+}
+
+.options li {
+  display: inline;
+  padding-right: 15px;
+  color: #0D3B66;
+}

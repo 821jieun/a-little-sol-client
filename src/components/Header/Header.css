@@ -1,0 +1,12 @@
+.header {
+  background-color: #0D3B66;
+  color: #FAF0CA;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logout-link, .signup-link, .gallery-link, .login-link {
+  color: #FAF0CA;
+  float: right;
+  padding-right: 15px;
+}
