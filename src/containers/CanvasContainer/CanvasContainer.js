@@ -1,9 +1,10 @@
 import React from 'react';
 import Canvas from '../../components/Canvas/Canvas';
 import InstructionOptions from '../../components/InstructionOptions/InstructionOptions';
+import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
 
-export default class CanvasContainer extends React.Component {
+export class CanvasContainer extends React.Component {
   constructor(props) {
     super(props);
 

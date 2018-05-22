@@ -14,12 +14,12 @@ export const LOG_OUT = 'LOG_OUT';
 export const saveCanvas = canvas => ({
   type: SAVE_CANVAS,
   canvas
-  //make call to API to createDrawing
+  //make call to API to createDrawing here
 });
 export const deleteCanvas = canvas => ({
   type: DELETE_CANVAS,
   canvas
-  //make call to API to deleteDrawing
+  //make call to API to deleteDrawing here
 });
 export const selectInstruction = instruction => ({
   type: SELECT_INSTRUCTION,

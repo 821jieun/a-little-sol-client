@@ -26,6 +26,7 @@ export const solReducer = (state=initialState, action) => {
     case MAKE_DRAWING:
       newState.currentlyDrawing = action.currentlyDrawing;
 
+    //redux form stuff
     // case SIGN_UP:
     // case LOG_IN:
     // case LOG_OUT:

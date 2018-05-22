@@ -1,15 +1,15 @@
 import React from 'react';
 import './InstructionOptions.css';
 import InstructionText from '../InstructionText/InstructionText';
-import { SELECT_INSTRUCTION } from '../actions';
+import { SELECT_INSTRUCTION } from '../../actions';
 import { connect } from 'react-redux';
 
-export default class InstructionOptions extends React.Component {
+export class InstructionOptions extends React.Component {
   constructor(props) {
     super(props);
   }
   selectInstruction(text) {
-    this.props.dispatch(selectInstruction(text))
+    this.props.dispatch(this.selectInstruction(text))
   }
 
   handleClick(event, index) {
