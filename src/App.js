@@ -6,7 +6,7 @@ import Canvas from './components/Canvas/Canvas';
 import InstructionOptions from './components/InstructionOptions/InstructionOptions';
 import LoginForm from './components/LoginForm/LoginForm';
 import SignupForm from './components/SignupForm/SignupForm';
-import CanvasContainer from './components/CanvasContainer/CanvasContainer';
+import CanvasContainer from './containers/CanvasContainer/CanvasContainer';
 
 class App extends Component {
   render() {

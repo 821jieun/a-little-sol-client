@@ -1,30 +1,33 @@
 import React from 'react';
-import Canvas from './Canvas/Canvas';
-import InstructionOptions from './InstructionOptions/InstructionOptions';
+import Canvas from '../../components/Canvas/Canvas';
+import InstructionOptions from '../../components/InstructionOptions/InstructionOptions';
 
 export default class CanvasContainer extends React.Component {
-  construction(props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
-      instructions: ['Wall Drawing #46', 'Wall Drawing #579', 'Wall Drawing #65', 'Plate 3', 'Wall Drawing #118']
+      canvasSize: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      },
+      listOfInstructionOptions: ['Wall Drawing #46', 'Wall Drawing #579', 'Wall Drawing #65', 'Plate 3', 'Wall Drawing #1112'],
+      instructionText: ['Vertical lines, not straight, not touching, covering the wall evenly.', 'Three concentric arches. The outside one is blue; the middle red; the inside one is yellow.', 'Lines not short, not straight, crossing and touching, drawn at random, using four colors, uniformly dispersed with maximum density, covering the entire surface of the wall.', 'Using a black, hard crayon draw a straight line of any length.  From any point on that line draw another line perpendicular to the first.  From any point on the second line draw another line perpendicular to that line.  Repeat this procedure.', 'Square with broken bands of color.']
     }
   }
-  //in componentDidMount(?) get size of viewport in order to set canvas dimensions
   //TODO:write renderCanvas method here
-  componentDidMount() {
-    canvas = document.getElementById('mycanvas');
+  renderCanvas() {
 
-   // Set canvas dimensions
-   canvas.width = window.innerWidth;
-   canvas.height = window.innerHeight;
+  }
+  componentDidMount() {
+
   }
 
   render() {
     return (
       <div>
-        <InstructionOptions instructions={this.state.instructions}/>
-        <Canvas />
+        <InstructionOptions options={this.state.listOfInstructionOptions}/>
+        <Canvas instructionText={this.state.instructionText} width={this.state.canvasSize.width} height={this.state.canvasSize.height}/>
       </div>
     )
   }

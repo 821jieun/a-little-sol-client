@@ -1,31 +1,8 @@
-import * as actions from '../actions';
+import { SAVE_CANVAS, MAKE_DRAWING, SELECT_COLOR, SIGN_UP, LOG_IN, LOG_OUT, SEE_GALLERY, RESET_CANVAS, SELECT_INSTRUCTION } from '../actions';
 
 const initialState = {
-  // drawings: [],
-  //find the size of viewport to set it
-  canvasSize: {
-    x:
-    y:
-  }
-  canvas: [
-    {
-           color: '#000000',
-           enabled: false,
-           x: 200,
-           y: 200
-       }, {
-           color: '#F4D35E',
-           enabled: false,
-           x: 200,
-           y: 200
-       }, {
-           color: '#F78764',
-           enabled: false,
-           x: 200,
-           y: 200
-       }
-  ]
-  // color: 'black'
+  drawings: [],
+  canvas: ''
 };
 
 export const solReducer = (state=initialState, action) => {
