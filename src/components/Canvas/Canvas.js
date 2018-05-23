@@ -12,14 +12,7 @@ export class Canvas extends React.Component {
       canvasSize: {
         width: window.innerWidth,
         height: window.innerHeight
-      },
-      instruction: [
-        {option: 'Wall Drawing #46', text: 'Vertical lines, not straight, not touching, covering the wall evenly.'},
-        {option: 'Wall Drawing #579', text: 'Three concentric arches. The outside one is blue; the middle red; the inside one is yellow.'},
-        {option: 'Wall Drawing #65', text: 'Lines not short, not straight, crossing and touching, drawn at random, using four colors, uniformly dispersed with maximum density, covering the entire surface of the wall.'},
-        {option: 'Plate 3', text: 'Using a black, hard crayon draw a straight line of any length.  From any point on that line draw another line perpendicular to the first.  From any point on the second line draw another line perpendicular to that line.  Repeat this procedure.'},
-        {option: 'Wall Drawing #1112',  text:'Square with broken bands of color.'}
-      ]
+      }
     }
   }
 
@@ -33,11 +26,12 @@ export class Canvas extends React.Component {
     //depending on the viewport size...
     //
   }
+
   render() {
     return (
       <div className="canvas">
-        <InstructionOptions options={this.state.instruction} />
-        <InstructionText text={this.state.instructionText}/>
+        <InstructionOptions />
+        <InstructionText text={this.state.selectedInstructionText}/>
         <canvas id="draw" width={this.state.canvasSize.width} height={this.state.canvasSize.height}></canvas>
         <div className="color-buttons">
           <button className="blue-button">blue</button>
@@ -52,14 +46,16 @@ export class Canvas extends React.Component {
 }
 
 export const mapStateToProps = state => ({
-  instructionText: state.instructionText,
+  instruction: state.instruction,
   drawings: state.drawings,
   canvas: state.canvas,
-  currentlyDrawing: state.currentlyDrawing
+  currentlyDrawing: state.currentlyDrawing,
+  selectedInstructionText: state.selectedInstructionText
 })
 
 
 export default connect(mapStateToProps)(Canvas)
+///
 // import React from 'react';
 // import './Canvas.css';
 //

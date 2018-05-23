@@ -8,18 +8,20 @@ export class InstructionOptions extends React.Component {
   constructor(props) {
     super(props);
   }
+
   selectInstruction(text) {
     this.props.dispatch(selectInstruction(text))
   }
 
-  handleClick(event, index) {
+  handleClick(index, event) {
     event.preventDefault();
-    const text = this.props[index].text;
+    const text = this.props.instruction[index].text;
     this.selectInstruction(text)
   }
 
   render() {
-    const instructionOptions = this.props.map((instruction, index) => {
+    console.log(this.props, 'this dot props in instruction options')
+    const instructionOptions = this.props.instruction.map((instruction, index) => {
 
       let option = instruction.option;
       let instructionClassName = option.split(" ").join("-");
@@ -34,16 +36,16 @@ export class InstructionOptions extends React.Component {
         <ul className="options">
           {instructionOptions}
         </ul>
-        <InstructionText text={this.props.instructionText} />
       </div>
     )
   }
 }
 export const mapStateToProps = state => ({
-  instructionText: state.instructionText,
+  selectedInstructionText: state.selectedInstructionText,
   drawings: state.drawings,
   canvas: state.canvas,
-  currentlyDrawing: state.currentlyDrawing
+  currentlyDrawing: state.currentlyDrawing,
+  instruction: state.instruction
 })
 
 
