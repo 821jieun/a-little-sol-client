@@ -1,4 +1,13 @@
-import { SAVE_CANVAS, MAKE_DRAWING, SELECT_COLOR, SIGN_UP, LOG_IN, LOG_OUT, SEE_GALLERY, RESET_CANVAS, SELECT_INSTRUCTION } from '../actions';
+import {
+  SAVE_CANVAS,
+  MAKE_DRAWING,
+  SELECT_COLOR,
+  SIGN_UP,
+  LOG_IN,
+  LOG_OUT,
+  SEE_GALLERY,
+  RESET_CANVAS,
+  SELECT_INSTRUCTION } from '../actions';
 
 const initialState = {
   instructionText: '',
@@ -25,7 +34,7 @@ export const solReducer = (state=initialState, action) => {
 
     case MAKE_DRAWING:
       newState.currentlyDrawing = action.currentlyDrawing;
-
+      break;
     //redux form stuff
     // case SIGN_UP:
     // case LOG_IN:

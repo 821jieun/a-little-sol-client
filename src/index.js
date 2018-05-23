@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
-console.log(document.getElementById('root')); 
+console.log(document.getElementById('root'));
 ReactDOM.render(
   <Provider store={store}>
     <App />,

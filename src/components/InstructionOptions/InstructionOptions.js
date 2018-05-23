@@ -1,7 +1,7 @@
 import React from 'react';
 import './InstructionOptions.css';
 import InstructionText from '../InstructionText/InstructionText';
-import { SELECT_INSTRUCTION } from '../../actions';
+import { selectInstruction } from '../../actions/index';
 import { connect } from 'react-redux';
 
 export class InstructionOptions extends React.Component {
@@ -9,7 +9,7 @@ export class InstructionOptions extends React.Component {
     super(props);
   }
   selectInstruction(text) {
-    this.props.dispatch(this.selectInstruction(text))
+    this.props.dispatch(selectInstruction(text))
   }
 
   handleClick(event, index) {
@@ -19,9 +19,6 @@ export class InstructionOptions extends React.Component {
   }
 
   render() {
-    const instruction = this.props;
-    let instructionText;
-
     const instructionOptions = this.props.map((instruction, index) => {
 
       let option = instruction.option;
