@@ -1,4 +1,5 @@
 import {
+  SET_CANVAS_SIZE,
   SAVE_CANVAS,
   MAKE_DRAWING,
   SELECT_COLOR,
@@ -31,6 +32,11 @@ export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type) {
+    case SET_CANVAS_SIZE:
+      newState.width = action.width;
+      newState.height = action.height;
+      break;
+      
     case SELECT_INSTRUCTION:
       newState.selectedInstructionText = action.selectedInstructionText;
       break;

@@ -5,12 +5,17 @@ export const SEE_GALLERY = 'SEE_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
+export const SET_CANVAS_SIZE = 'SET_CANVAS_SIZE';
 //
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 
-
+export const setCanvasSize = (width, height) => {
+  type: SET_CANVAS_SIZE,
+  width,
+  height
+}
 export const saveCanvas = canvas => ({
   type: SAVE_CANVAS,
   canvas
@@ -21,6 +26,7 @@ export const deleteCanvas = canvas => ({
   canvas
   //make call to API to deleteDrawing here
 });
+
 export const selectInstruction = selectedInstructionText => ({
   type: SELECT_INSTRUCTION,
   selectedInstructionText
