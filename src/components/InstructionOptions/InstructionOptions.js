@@ -15,9 +15,7 @@ export class InstructionOptions extends React.Component {
 
   handleClick(index, event) {
     event.preventDefault();
-    console.log('inside handle click');
     const text = this.props.instruction[index].text;
-    console.log(text, 'shakespeare')
     this.selectInstruction(text)
   }
 

@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.header-text {
+  list-style: none;
+  color: #FAF0CA;
+}
+
 .logout-link, .signup-link, .gallery-link, .login-link {
   color: #FAF0CA;
   float: right;
