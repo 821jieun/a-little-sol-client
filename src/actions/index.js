@@ -21,9 +21,9 @@ export const deleteCanvas = canvas => ({
   canvas
   //make call to API to deleteDrawing here
 });
-export const selectInstruction = text => ({
+export const selectInstruction = selectedInstructionText => ({
   type: SELECT_INSTRUCTION,
-  text
+  selectedInstructionText
 });
 export const makeDrawing = boolean => ({
   type: MAKE_DRAWING,

@@ -27,6 +27,7 @@ export class Canvas extends React.Component {
     //dispatch it?
   }
 
+
   render() {
     return (
       <div className="canvas">
