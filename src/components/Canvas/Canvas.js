@@ -3,6 +3,8 @@ import './Canvas.css';
 import InstructionOptions from '../../components/InstructionOptions/InstructionOptions';
 import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
+import P5Wrapper from 'react-p5-wrapper';
+import sketch from '../sketch';
 
 export class Canvas extends React.Component {
   constructor(props) {
@@ -36,7 +38,7 @@ export class Canvas extends React.Component {
       <div className="canvas">
         <InstructionOptions />
         <InstructionText text={this.props.selectedInstructionText}/>
-        <canvas id="draw" width={this.props.canvasSize.width} height={this.props.canvasSize.height}></canvas>
+        <P5Wrapper id="draw" width={this.props.canvasSize.width} height={this.props.canvasSize.height} sketch={sketch}/>
         <div className="color-buttons">
           <button className="black-button">black</button>
           <button className="blue-button">blue</button>
@@ -47,6 +49,23 @@ export class Canvas extends React.Component {
       </div>
     )
   }
+  //
+  // render() {
+  //   return (
+  //     <div className="canvas">
+  //       <InstructionOptions />
+  //       <InstructionText text={this.props.selectedInstructionText}/>
+  //       <canvas id="draw" width={this.props.canvasSize.width} height={this.props.canvasSize.height}></canvas>
+  //       <div className="color-buttons">
+  //         <button className="black-button">black</button>
+  //         <button className="blue-button">blue</button>
+  //         <button className="yellow-button">yellow</button>
+  //         <button className="red-button">red</button>
+  //         <button className="green-button">green</button>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 }
 
 export const mapStateToProps = state => ({
