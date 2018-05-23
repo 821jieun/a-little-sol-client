@@ -8,12 +8,12 @@ export class Canvas extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      canvasSize: {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-    }
+    // this.state = {
+    //   canvasSize: {
+    //     width: window.innerWidth,
+    //     height: window.innerHeight
+    //   }
+    // }
   }
 
   renderCanvas() {
@@ -24,15 +24,15 @@ export class Canvas extends React.Component {
     //check viewport size?
     //set it in state
     //depending on the viewport size...
-    //
+    //dispatch it?
   }
 
   render() {
     return (
       <div className="canvas">
         <InstructionOptions />
-        <InstructionText text={this.state.selectedInstructionText}/>
-        <canvas id="draw" width={this.state.canvasSize.width} height={this.state.canvasSize.height}></canvas>
+        <InstructionText text={this.props.selectedInstructionText}/>
+        <canvas id="draw" width={this.props.canvasSize.width} height={this.props.canvasSize.height}></canvas>
         <div className="color-buttons">
           <button className="blue-button">blue</button>
           <button className="yellow-button">yellow</button>
@@ -50,7 +50,8 @@ export const mapStateToProps = state => ({
   drawings: state.drawings,
   canvas: state.canvas,
   currentlyDrawing: state.currentlyDrawing,
-  selectedInstructionText: state.selectedInstructionText
+  selectedInstructionText: state.selectedInstructionText,
+  canvasSize: state.canvasSize
 })
 
 

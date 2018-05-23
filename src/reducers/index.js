@@ -20,7 +20,11 @@ const initialState = {
     {option: 'Wall Drawing #65', text: 'Lines not short, not straight, crossing and touching, drawn at random, using four colors, uniformly dispersed with maximum density, covering the entire surface of the wall.'},
     {option: 'Plate 3', text: 'Using a black, hard crayon draw a straight line of any length.  From any point on that line draw another line perpendicular to the first.  From any point on the second line draw another line perpendicular to that line.  Repeat this procedure.'},
     {option: 'Wall Drawing #1112',  text:'Square with broken bands of color.'}
-  ]
+  ],
+  canvasSize: {
+      width: window.innerWidth,
+      height: window.innerHeight
+    }
 };
 
 export const solReducer = (state=initialState, action) => {
