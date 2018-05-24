@@ -18,7 +18,7 @@ export const setCanvasSize = (width, height) => ({
   height
 })
 
-export const saveCanvas = (instruction, canvas) => dispatch => {
+export const saveCanvasToGallery = (instruction, canvas) => dispatch => {
   // fetch(`${API_BASE_URL}/drawings/create/${localStorage.getItem('token')}`)
   //   .then((res) => {
   //     if(!res.ok) {
@@ -30,6 +30,7 @@ export const saveCanvas = (instruction, canvas) => dispatch => {
   //     dispatch(saveCanvas(instruction, canvas));
   //   })
   //make call to API to createDrawing here
+  console.log('I MADE IT !!!')
 };
 
 export const deleteCanvas = canvas => ({
