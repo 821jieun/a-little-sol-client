@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 export class InstructionText extends React.Component {
     render() {
-        console.log(this.props, 'props inside Instruction text')
       return (
         <div>
           <h3 className="instruction-header">Instruction: <span className="text">{this.props.selectedInstructionText}</span></h3>

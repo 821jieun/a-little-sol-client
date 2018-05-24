@@ -8,11 +8,17 @@
 //     sol: solReducer
 //   })
 // );
-import {createStore, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk';
-
-import {createStore} from 'redux'
-
+import {createStore, applyMiddleware} from 'redux';
 import {solReducer} from './reducers';
 
-export default createStore(solReducer);
+import {createLogger} from 'redux-logger';
+import thunk from 'redux-thunk';
+
+
+export default createStore(
+  solReducer,
+  applyMiddleware(
+    thunk,
+    createLogger({collapsed: true})
+  )
+);

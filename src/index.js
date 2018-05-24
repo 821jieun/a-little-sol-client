@@ -8,7 +8,8 @@ import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom';
 
-console.log(document.getElementById('root'));
+
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

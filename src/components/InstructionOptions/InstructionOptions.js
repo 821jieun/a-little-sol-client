@@ -1,6 +1,5 @@
 import React from 'react';
 import './InstructionOptions.css';
-import InstructionText from '../InstructionText/InstructionText';
 import { selectInstruction } from '../../actions/index';
 import { connect } from 'react-redux';
 
@@ -20,7 +19,6 @@ export class InstructionOptions extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'this dot props in instruction options')
     const instructionOptions = this.props.instruction.map((instruction, index) => {
 
       let option = instruction.option;

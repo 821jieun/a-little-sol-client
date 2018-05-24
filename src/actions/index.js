@@ -1,3 +1,4 @@
+
 export const SAVE_CANVAS = 'SAVE_CANVAS';
 export const MAKE_DRAWING = 'MAKE_DRAWING';
 export const SELECT_COLOR = 'SELECT_COLOR';
@@ -11,23 +12,23 @@ export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 
-export const setCanvasSize = (width, height) => {
+export const setCanvasSize = (width, height) => ({
   type: SET_CANVAS_SIZE,
   width,
   height
-}
+})
 
-export const saveCanvas = () => dispatch => {
-  fetch(`${API_BASE_URL}/drawings/create/${localStorage.getItem('token')}`)
-    .then((res) => {
-      if(!res.ok) {
-        return Promise.reject(res.statusText)
-      }
-      return res.json();
-    })
-    .then((board) => {
-      dispatch(saveCanvasSuccess(instruction, canvas));
-    })
+export const saveCanvas = (instruction, canvas) => dispatch => {
+  // fetch(`${API_BASE_URL}/drawings/create/${localStorage.getItem('token')}`)
+  //   .then((res) => {
+  //     if(!res.ok) {
+  //       return Promise.reject(res.statusText)
+  //     }
+  //     return res.json();
+  //   })
+  //   .then((board) => {
+  //     dispatch(saveCanvas(instruction, canvas));
+  //   })
   //make call to API to createDrawing here
 };
 

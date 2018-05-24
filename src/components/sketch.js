@@ -1,6 +1,6 @@
 export default function sketch (p) {
   p.setup = function() {
-    p.createCanvas(710, 400);
+   p.createCanvas(710, 400);
     p.background('#d3d3d3');
   }
 
@@ -12,6 +12,10 @@ export default function sketch (p) {
   }
 
 };
+
+
+
+// export default connect(mapStateToProps)(InstructionOptions)
 
 //mobile
 // ??
