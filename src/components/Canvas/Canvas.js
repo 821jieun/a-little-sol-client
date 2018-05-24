@@ -101,22 +101,6 @@ export class Canvas extends React.Component {
     )
   }
 
-  // render() {
-  //   return (
-  //     <div className="canvas">
-  //       <InstructionOptions />
-  //       <InstructionText text={this.props.selectedInstructionText}/>
-  //       <canvas id="draw" width={this.props.canvasSize.width} height={this.props.canvasSize.height}></canvas>
-  //       <div className="color-buttons">
-  //         <button className="black-button">black</button>
-  //         <button className="blue-button">blue</button>
-  //         <button className="yellow-button">yellow</button>
-  //         <button className="red-button">red</button>
-  //         <button className="green-button">green</button>
-  //       </div>
-  //     </div>
-  //   )
-  // }
 }
 
 export const mapStateToProps = state => ({

@@ -3,10 +3,26 @@ import React from 'react';
 export default class CanvasElementWrapper extends React.Component {
   constructor() {
     super()
+
+    this.state = {
+      width: 250,
+      height: 250
+    }
   }
 
   componentDidMount() {
-    this.updateCanvas()
+    this.setCanvasHeightAndWidth();
+    this.updateCanvas();
+  }
+
+  setCanvasHeightAndWidth() {
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    console.log(`i, the canvas, herby declare, i am this wide: ${width} and this tall! ${height}`)
+    this.setState({
+      width: width,
+      height: height
+    })
   }
 
   updateCanvas() {
@@ -56,7 +72,7 @@ export default class CanvasElementWrapper extends React.Component {
 
   render() {
     return (
-      <canvas ref="canvas"></canvas>
+      <canvas ref="canvas" width={this.state.width} height={this.state.height}></canvas>
     )
   }
 }
