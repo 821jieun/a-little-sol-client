@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
       super()
 
       this.state = {
-        height: 250
+        height: window.innerHeight
       }
     }
 
@@ -54,6 +54,23 @@ const mapStateToProps = (state) => {
 
       function yesDraw() { draw = true; lineStart = true }
 
+      // touch
+      function touchMove(e) {
+         const bounds = canvas.getBoundingClientRect();
+         const x = e.pageX - bounds.left - window.scrollX;
+         const y = e.pageY - bounds.top - window.scrollY;
+         // const x = e.pageX - bounds.left - scrollX;
+         // const y = e.pageY - bounds.top - scrollY;
+         if(draw && x > -r && x < canvas.width + r && y > -r && y < canvas.height + r){
+            drawing(x,y);
+         }
+      }
+      //touch
+      document.addEventListener("touchmove",touchMove);
+      document.addEventListener("touchdown",yesDraw);
+      document.addEventListener("touchup",noDraw);
+
+      // mouse
       function mouseMove(e) {
          const bounds = canvas.getBoundingClientRect();
          const x = e.pageX - bounds.left - window.scrollX;
@@ -64,10 +81,12 @@ const mapStateToProps = (state) => {
             drawing(x,y);
          }
       }
+
       function noDraw() { draw = false }
       document.addEventListener("mousemove",mouseMove);
       document.addEventListener("mousedown",yesDraw);
       document.addEventListener("mouseup",noDraw);
+
       function drawing(x, y) {
         if(lineStart){
            lastX = x;
@@ -83,6 +102,7 @@ const mapStateToProps = (state) => {
       }
     }
 
+//
   saveCanvasToGallery(instruction, canvas) {
     this.props.dispatch(saveCanvasToGallery(instruction, canvas))
   }

@@ -2,7 +2,6 @@
 export const SCREEN_RESIZE = 'SCREEN_RESIZE';
 //sol reducer
 export const SAVE_CANVAS = 'SAVE_CANVAS';
-export const MAKE_DRAWING = 'MAKE_DRAWING';
 export const SELECT_COLOR = 'SELECT_COLOR';
 export const SEE_GALLERY = 'SEE_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
@@ -48,22 +47,17 @@ export const deleteCanvas = canvas => ({
   canvas
   //make call to API to deleteDrawing here
 });
-
+export const seeGallery = () => ({
+  type: SEE_GALLERY
+  //make call to API to getAll
+});
 export const selectInstruction = selectedInstructionText => ({
   type: SELECT_INSTRUCTION,
   selectedInstructionText
 });
-export const makeDrawing = boolean => ({
-  type: MAKE_DRAWING,
-  boolean
-});
 export const selectColor = color => ({
   type: SELECT_COLOR,
   color
-});
-export const seeGallery = () => ({
-  type: SEE_GALLERY
-  //make call to API to getAll
 });
 export const resetCanvas = canvas => ({
   type: RESET_CANVAS

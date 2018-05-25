@@ -1,7 +1,5 @@
 import {
-  SET_CANVAS_SIZE,
   SAVE_CANVAS,
-  MAKE_DRAWING,
   SELECT_COLOR,
   SIGN_UP,
   LOG_IN,
@@ -48,9 +46,6 @@ export const solReducer = (state=initialState, action) => {
       newState.color = action.color;
       break;
 
-    case MAKE_DRAWING:
-      newState.currentlyDrawing = action.currentlyDrawing;
-      break;
 
     //redux form related stuff
     // case SIGN_UP:
