@@ -5,7 +5,7 @@ import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
 import CanvasElementWrapper from '../CanvasElementWrapper/CanvasElementWrapper';
 import sketch from '../sketch';
-import {setCanvasSize, saveCanvasToGallery} from '../../actions';
+import {saveCanvasToGallery} from '../../actions';
 
 export class Canvas extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export class Canvas extends React.Component {
       <div className="canvas">
         <InstructionOptions />
         <InstructionText text={this.props.selectedInstructionText}/>
-        <CanvasElementWrapper id="draw" />
+        <CanvasElementWrapper />
         <div className="color-buttons">
           <button className="black-button">black</button>
           <button className="blue-button">blue</button>
@@ -30,26 +30,6 @@ export class Canvas extends React.Component {
       </div>
     )
   }
-  // render() {
-  //   return (
-  //     <div className="canvas">
-  //       <InstructionOptions />
-  //       <InstructionText text={this.props.selectedInstructionText}/>
-  //       <CanvasElementWrapper id="draw" />
-  //       <div className="color-buttons">
-  //         <button className="black-button">black</button>
-  //         <button className="blue-button">blue</button>
-  //         <button className="yellow-button">yellow</button>
-  //         <button className="red-button">red</button>
-  //         <button className="green-button">green</button>
-  //       </div>
-  //       <div className="save-and-reset-buttons">
-  //         <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
-  //         <button className="reset-button">reset</button>
-  //       </div>
-  //     </div>
-  //   )
-  // }
 
 }
 

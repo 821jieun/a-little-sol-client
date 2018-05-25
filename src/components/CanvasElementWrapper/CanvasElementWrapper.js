@@ -1,12 +1,12 @@
 import React from 'react';
-import {setCanvasSize, saveCanvasToGallery} from '../../actions';
+import {saveCanvasToGallery} from '../../actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
 
   return {
-    instruction: state.instruction,
-    canvas: state.canvas
+    instruction: state.sol.instruction,
+    canvas: state.sol.canvas
   }
 
 };
@@ -28,8 +28,6 @@ const mapStateToProps = (state) => {
       this.updateCanvas();
     }
 
-
-
     setCanvasHeightAndWidth() {
       let width = window.innerWidth;
       let height = window.innerHeight;
@@ -43,7 +41,6 @@ const mapStateToProps = (state) => {
     updateCanvas() {
       const canvas = this.refs.canvas;
       const ctx = canvas.getContext("2d");
-      // const ctx = this.refs.canvas.getContext("2d");
       const r = 10; // draw radius
       ctx.lineWidth = r * 2;
       ctx.lineCap = "round";
@@ -51,8 +48,6 @@ const mapStateToProps = (state) => {
       var draw = false;
       var lineStart = true;
       var lastX, lastY;
-
-
 
       function yesDraw() { draw = true; lineStart = true }
 
@@ -88,21 +83,19 @@ const mapStateToProps = (state) => {
   saveCanvasToGallery(instruction, canvas) {
     this.props.dispatch(saveCanvasToGallery(instruction, canvas))
   }
+
   handleClick(event) {
     event.preventDefault();
-    console.log('hello1!!!! you made it!!')
     const canvasToSaveToGallery = this.refs.canvas;
     const canvasAsDataUrl = canvasToSaveToGallery.toDataURL('image/jpeg');
     console.log(canvasAsDataUrl);
-    // this.saveCanvasAsDataUrl(state.instruction, canvasAsDataUrl);
     this.saveCanvasToGallery(this.props.instruction, canvasAsDataUrl);
 
   }
     render() {
       return (
         <div>
-          <canvas ref="canvas" width={this.state.width} height={this.state.height}></canvas>
-
+          <canvas id="draw" ref="canvas" width={this.state.width} height={this.state.height}></canvas>
           <div className="save-and-reset-buttons">
             <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
             <button className="reset-button">reset</button>

@@ -3,6 +3,17 @@ import './InstructionOptions.css';
 import { selectInstruction } from '../../actions/index';
 import { connect } from 'react-redux';
 
+export const mapStateToProps = (state) => {
+  console.log('state of the state', state);
+  return {
+    screenWidth: state.ui.screenWidth,
+    selectedInstructionText: state.sol.selectedInstructionText,
+    drawings: state.sol.drawings,
+    canvas: state.sol.canvas,
+    instruction: state.sol.instruction
+  }
+}
+
 export class InstructionOptions extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +30,7 @@ export class InstructionOptions extends React.Component {
   }
 
   render() {
+    // debugger;
     const instructionOptions = this.props.instruction.map((instruction, index) => {
 
       let option = instruction.option;
@@ -38,13 +50,7 @@ export class InstructionOptions extends React.Component {
     )
   }
 }
-export const mapStateToProps = state => ({
-  selectedInstructionText: state.selectedInstructionText,
-  drawings: state.drawings,
-  canvas: state.canvas,
-  currentlyDrawing: state.currentlyDrawing,
-  instruction: state.instruction
-})
+
 
 
 export default connect(mapStateToProps)(InstructionOptions)

@@ -1,4 +1,6 @@
-
+//ui reducer
+export const SCREEN_RESIZE = 'SCREEN_RESIZE';
+//sol reducer
 export const SAVE_CANVAS = 'SAVE_CANVAS';
 export const MAKE_DRAWING = 'MAKE_DRAWING';
 export const SELECT_COLOR = 'SELECT_COLOR';
@@ -7,10 +9,18 @@ export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
 export const SET_CANVAS_SIZE = 'SET_CANVAS_SIZE';
-//
+
+//form reducer
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
+
+export const screenResize = (width) => {
+  return {
+    type: SCREEN_RESIZE,
+    screenWidth: width
+  };
+}
 
 export const setCanvasSize = (width, height) => ({
   type: SET_CANVAS_SIZE,
@@ -30,7 +40,7 @@ export const saveCanvasToGallery = (instruction, canvas) => dispatch => {
   //     dispatch(saveCanvas(instruction, canvas));
   //   })
   //make call to API to createDrawing here
-  console.log('I MADE IT !!!')
+  console.log('inside saving canvas to gallery !!!')
 };
 
 export const deleteCanvas = canvas => ({

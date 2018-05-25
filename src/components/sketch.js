@@ -57,7 +57,7 @@ export default function sketch (p) {
 //   return false;
 // }
 
-function mouseDragged(){
+// function mouseDragged(){
   //stroke(0, 255, 0);
   //line(mouseX, mouseY, pmouseX, pmouseY);
-}
+// }
