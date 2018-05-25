@@ -8,23 +8,22 @@ export const SEE_GALLERY = 'SEE_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
-export const SET_CANVAS_SIZE = 'SET_CANVAS_SIZE';
+export const SET_CANVAS_HEIGHT = 'SET_CANVAS_HEIGHT';
 
 //form reducer
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 
-export const screenResize = (width) => {
+export const screenResize = (screenWidth) => {
   return {
     type: SCREEN_RESIZE,
-    screenWidth: width
+    screenWidth
   };
 }
 
-export const setCanvasSize = (width, height) => ({
-  type: SET_CANVAS_SIZE,
-  width,
+export const setCanvasHeight = (height) => ({
+  type: SET_CANVAS_HEIGHT,
   height
 })
 
@@ -40,7 +39,8 @@ export const saveCanvasToGallery = (instruction, canvas) => dispatch => {
   //     dispatch(saveCanvas(instruction, canvas));
   //   })
   //make call to API to createDrawing here
-  console.log('inside saving canvas to gallery !!!')
+  console.log(instruction, 'instruction')
+  console.log(canvas, 'canvas')
 };
 
 export const deleteCanvas = canvas => ({

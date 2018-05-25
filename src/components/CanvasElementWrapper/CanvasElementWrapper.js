@@ -1,12 +1,13 @@
 import React from 'react';
-import {saveCanvasToGallery} from '../../actions';
+import {saveCanvasToGallery, screenResize, setCanvasHeight} from '../../actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
 
   return {
-    instruction: state.sol.instruction,
-    canvas: state.sol.canvas
+    selectedInstructionText: state.sol.selectedInstructionText,
+    canvas: state.sol.canvas,
+    screenWidth: state.ui.screenWidth
   }
 
 };
@@ -18,22 +19,24 @@ const mapStateToProps = (state) => {
       super()
 
       this.state = {
-        width: 250,
         height: 250
       }
     }
 
     componentDidMount() {
-      this.setCanvasHeightAndWidth();
+      this.setCanvasHeight();
+      this.screenResize();
       this.updateCanvas();
     }
 
-    setCanvasHeightAndWidth() {
-      let width = window.innerWidth;
+    screenResize() {
+      console.log('inside canvas element wrapper')
+      this.props.dispatch(screenResize(this.props.screenWidth))
+    }
+    setCanvasHeight() {
       let height = window.innerHeight;
-      console.log(`i, the canvas, herby declare, i am this wide: ${width} and this tall! ${height}`)
+      console.log(`i, the canvas, herby declare, i am this tall! ${height}`)
       this.setState({
-        width: width,
         height: height
       })
     }
@@ -43,7 +46,7 @@ const mapStateToProps = (state) => {
       const ctx = canvas.getContext("2d");
       const r = 10; // draw radius
       ctx.lineWidth = r * 2;
-      ctx.lineCap = "round";
+      ctx.lineCap = "round";//butt||square
       ctx.fillStyle = "black";
       var draw = false;
       var lineStart = true;
@@ -88,14 +91,13 @@ const mapStateToProps = (state) => {
     event.preventDefault();
     const canvasToSaveToGallery = this.refs.canvas;
     const canvasAsDataUrl = canvasToSaveToGallery.toDataURL('image/jpeg');
-    console.log(canvasAsDataUrl);
-    this.saveCanvasToGallery(this.props.instruction, canvasAsDataUrl);
+    this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
 
   }
     render() {
       return (
         <div>
-          <canvas id="draw" ref="canvas" width={this.state.width} height={this.state.height}></canvas>
+          <canvas id="draw" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
           <div className="save-and-reset-buttons">
             <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
             <button className="reset-button">reset</button>

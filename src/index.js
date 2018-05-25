@@ -11,8 +11,6 @@ import {screenResize} from './actions';
 
 
 window.addEventListener('resize', () => {
-  console.log('get state')
-  store.getState();
     store.dispatch(screenResize(window.innerWidth));
 });
 

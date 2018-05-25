@@ -11,7 +11,7 @@ import {
   SELECT_INSTRUCTION } from '../actions';
 
 const initialState = {
-  selectedInstructionText: '',
+  selectedInstructionText: 'Select instruction to begin.',
   drawings: [],
   canvas: '',
   instruction: [

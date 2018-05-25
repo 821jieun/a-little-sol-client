@@ -12,17 +12,8 @@ export class InstructionText extends React.Component {
     }
 }
 
-// export default function InstructionText(props){
-//     return (
-//
-//       <div>
-//         {console.log(props, 'props inside Instruction text')}
-//         <h3 className="instruction-header">Instruction:<span className="text">{props.selectedInstructionText}</span></h3>
-//       </div>
-//     )
-// }
 export const mapStateToProps = state => ({
-  selectedInstructionText: state.selectedInstructionText,
+  selectedInstructionText: state.sol.selectedInstructionText,
 })
 
 

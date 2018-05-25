@@ -4,13 +4,11 @@ import InstructionOptions from '../../components/InstructionOptions/InstructionO
 import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
 import CanvasElementWrapper from '../CanvasElementWrapper/CanvasElementWrapper';
-import sketch from '../sketch';
 import {saveCanvasToGallery} from '../../actions';
 
 export class Canvas extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   // canvas element

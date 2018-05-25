@@ -4,7 +4,6 @@ import { selectInstruction } from '../../actions/index';
 import { connect } from 'react-redux';
 
 export const mapStateToProps = (state) => {
-  console.log('state of the state', state);
   return {
     screenWidth: state.ui.screenWidth,
     selectedInstructionText: state.sol.selectedInstructionText,
