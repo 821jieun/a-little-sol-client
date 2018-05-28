@@ -4,40 +4,45 @@ import {
     AUTH_REQUEST,
     AUTH_SUCCESS,
     AUTH_ERROR
-} from '../actions/auth';
+} from '../actions/index';
 
 const initialState = {
-    authToken: null, // authToken !== null does not mean it has been validated
+    token: null, // authToken !== null does not mean it has been validated
     currentUser: null,
     loading: false,
     error: null
 };
+export const authReducer = (state=initialState, action) => {
+  const newState = Object.assign({}, state);
 
-export default function reducer(state = initialState, action) {
-    if (action.type === SET_AUTH_TOKEN) {
-        return Object.assign({}, state, {
-            authToken: action.authToken
-        });
-    } else if (action.type === CLEAR_AUTH) {
-        return Object.assign({}, state, {
-            authToken: null,
-            currentUser: null
-        });
-    } else if (action.type === AUTH_REQUEST) {
-        return Object.assign({}, state, {
-            loading: true,
-            error: null
-        });
-    } else if (action.type === AUTH_SUCCESS) {
-        return Object.assign({}, state, {
-            loading: false,
-            currentUser: action.currentUser
-        });
-    } else if (action.type === AUTH_ERROR) {
-        return Object.assign({}, state, {
-            loading: false,
-            error: action.error
-        });
-    }
+  switch(action.type) {
+    case SET_AUTH_TOKEN:
+    newState.token = action.token;
+    break;
+
+    case CLEAR_AUTH:
+    newState.token = action.token;
+    newState.currentUser = action.currentUser;
+    break;
+
+    case AUTH_REQUEST:
+    newState.loading = action.loading;
+    newState.error = action.error;
+    break;
+
+    case AUTH_SUCCESS:
+    newState.loading = action.loading;
+    newState.currentUser = action.currentUser;
+    break;
+
+    case AUTH_ERROR:
+    newState.loading = action.loading;
+    newState.error = action.error;
+    break;
+
+    default:
     return state;
+  }
+  return newState;
 }
+//

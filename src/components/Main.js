@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Canvas from './Canvas/Canvas';
 import LoginForm from './LoginForm/LoginForm';
-import SignupForm from './SignupForm/SignupForm';
+import RegisterForm from './RegisterForm/RegisterForm';
 
 export default class Main extends React.Component {
 
@@ -12,8 +12,7 @@ export default class Main extends React.Component {
         <Switch>
           <Route exact path="/" component={Canvas} />
           <Route path="/login" component={LoginForm} />
-          <Route path="/signup" component={SignupForm} />
-
+          <Route path="/register" component={RegisterForm} />
         </Switch>
       </main>
     )
