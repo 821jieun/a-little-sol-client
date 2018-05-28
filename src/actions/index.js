@@ -129,69 +129,36 @@ const storeAuthInfo = (token, dispatch) => {
     saveAuthToken(token);
 };
 
-export const login = (username, password) => {
-  return dispatch => {
-    dispatch(authRequest())
-    axios.post(`${API_BASE_URL}/user/login`, {
-    username: username,
-    password: password
-  })
-  .then(function (response) {
-    console.log(response, 'RESPONSE');
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-    // axios.get(`${API_BASE_URL}/user/login`)
-      // .then(response => {
-        // console.log(response, 'dadadada response')
-        // dispatch(receiveAlbum(response.data));
-      // });
-};
-  //this is the step where token is set in local storage
+// export const login = (username, password) => {
 //   return dispatch => {
-//     dispatch(authRequest());
-//     return (
-//         fetch(`${API_BASE_URL}/user/login`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({
-//                 username,
-//                 password
-//             })
-//         })
-//             // Reject any requests which don't return a 200 status, creating
-//             // errors which follow a consistent format
-//             .then(res => {
-//               console.log(res.body, 'RESSSSSSSSS dot body')
+//     dispatch(authRequest())
+//     axios.post(`${API_BASE_URL}/user/login`, {
+//     username: username,
+//     password: password
+//   })
+//   .then(function (response) {
+//     console.log(response, 'RESPONSE');
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
 //
-//               // console.log(res.data, 'RESDOTDATA HERE')
-//               normalizeResponseErrors(res)
-//             })
-//             .then(res => {
-//               res.json()
-// }
-//           )
-//             .then(({token}) => storeAuthInfo(token, dispatch))
-//             .catch(err => {
-//                 const {code} = err;
-//                 const message =
-//                     code === 401
-//                         ? 'Incorrect username or password'
-//                         : 'Unable to login, please try again';
-//                 dispatch(authError(err));
-//                 // Could not authenticate, so return a SubmissionError for Redux
-//                 // Form
-//                 return Promise.reject(
-//                     new SubmissionError({
-//                         _error: message
-//                     })
-//                 );
-//             })
-//     );
-//   }
+// };
+export const login = (username, password) => {
+    return dispatch => {
+      dispatch(authRequest())
+      axios.post(`${API_BASE_URL}/user/login`, {
+      username: username,
+      password: password
+    })
+      .then((response) => {
+      const token = response.data.data.token;
+      storeAuthInfo(token, dispatch)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  };
 };
 
 export const logout = () => ({
