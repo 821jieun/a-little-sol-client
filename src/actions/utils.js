@@ -4,6 +4,7 @@
 // containing the status text.  If there is no error then we continue with
 // the promise chain.
 export const normalizeResponseErrors = res => {
+  console.log('res in normalize', res)
     if (!res.ok) {
         if (
             res.headers.has('content-type') &&

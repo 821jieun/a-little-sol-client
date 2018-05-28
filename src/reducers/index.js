@@ -1,11 +1,7 @@
 import {
   SAVE_CANVAS,
   SELECT_COLOR,
-  SIGN_UP,
-  LOG_IN,
-  LOG_OUT,
   SEE_GALLERY,
-  RESET_CANVAS,
   SELECT_INSTRUCTION } from '../actions';
 
 const initialState = {
@@ -25,10 +21,6 @@ export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type) {
-    // case SET_CANVAS_SIZE:
-    //   newState.width = action.width;
-    //   newState.height = action.height;
-    //   break;
 
     case SELECT_INSTRUCTION:
       newState.selectedInstructionText = action.selectedInstructionText;
@@ -41,12 +33,6 @@ export const solReducer = (state=initialState, action) => {
     case SELECT_COLOR:
       newState.color = action.color;
       break;
-
-
-    //redux form related stuff
-    // case SIGN_UP:
-    // case LOG_IN:
-    // case LOG_OUT:
 
 
     default:

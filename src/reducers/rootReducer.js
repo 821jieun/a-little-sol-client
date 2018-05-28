@@ -2,7 +2,7 @@ import {combineReducers} from 'redux';
 import { solReducer }from './index';
 import { uiReducer } from './uiReducer';
 import { reducer as reducerForm } from 'redux-form';
-import { authReducer } from './authReducer';
+import { authReducer } from './auth';
 
 export default combineReducers({
   form: reducerForm,
