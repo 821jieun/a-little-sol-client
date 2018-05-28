@@ -1,3 +1,7 @@
+import {API_BASE_URL} from '../config';
+import {normalizeResponseErrors} from './utils';
+
+
 //ui reducer
 export const SCREEN_RESIZE = 'SCREEN_RESIZE';
 //sol reducer
@@ -10,7 +14,7 @@ export const DELETE_CANVAS = 'DELETE_CANVAS';
 export const SET_CANVAS_HEIGHT = 'SET_CANVAS_HEIGHT';
 
 //form reducer
-export const SIGN_UP = 'SIGN_UP';
+export const REGISTER_USER = 'REGISTER_USER';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 
@@ -64,9 +68,32 @@ export const resetCanvas = canvas => ({
 });
 
 //redux form stuff
-export const signUp = () => ({
-  type: SIGN_UP
-});
+export const registerUser = (user) => {
+  return dispatch => {
+    return fetch(`${API_BASE_URL}/users`, {
+    method: 'POST',
+    headers: {
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+})
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+        const {reason, message, location} = err;
+        if (reason === 'ValidationError') {
+            // Convert ValidationErrors into SubmissionErrors for Redux Form
+            return Promise.reject(
+                new SubmissionError({
+                    [location]: message
+                })
+            );
+        }
+    });
+  }
+
+};
+
 export const logIn = () => ({
   type: LOG_IN
 });
