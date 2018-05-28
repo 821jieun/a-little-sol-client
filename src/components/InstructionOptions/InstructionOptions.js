@@ -7,7 +7,6 @@ export const mapStateToProps = (state) => {
   return {
     screenWidth: state.ui.screenWidth,
     selectedInstructionText: state.sol.selectedInstructionText,
-    drawings: state.sol.drawings,
     canvas: state.sol.canvas,
     instruction: state.sol.instruction
   }
@@ -29,7 +28,6 @@ export class InstructionOptions extends React.Component {
   }
 
   render() {
-    // debugger;
     const instructionOptions = this.props.instruction.map((instruction, index) => {
 
       let option = instruction.option;

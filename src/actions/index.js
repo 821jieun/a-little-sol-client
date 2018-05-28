@@ -27,31 +27,58 @@ export const SEE_GALLERY = 'SEE_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
-export const saveCanvasToGallery = (instruction, canvas) => dispatch => {
-  // fetch(`${API_BASE_URL}/drawings/create/${localStorage.getItem('token')}`)
-  //   .then((res) => {
-  //     if(!res.ok) {
-  //       return Promise.reject(res.statusText)
-  //     }
-  //     return res.json();
-  //   })
-  //   .then((board) => {
-  //     dispatch(saveCanvas(instruction, canvas));
-  //   })
-  //make call to API to createDrawing here
-  console.log(instruction, 'instruction')
-  console.log(canvas, 'canvas')
-};
+export const DISPLAY_ALL_DRAWINGS_IN_GALLERY = 'DISPLAY_ALL_DRAWINGS_IN_GALLERY';
+
+export const saveCanvasToGallery = (instruction, canvas) => {
+  return dispatch => {
+    axios.post(`${API_BASE_URL}/drawings/create/${localStorage.getItem('token')}`, {
+      instruction: instruction,
+      canvas: canvas
+    })
+    .then((response) => {
+      console.log(response, 'response inside saveCanvasToCallery')
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+}
 
 export const deleteCanvas = canvas => ({
   type: DELETE_CANVAS,
   canvas
   //make call to API to deleteDrawing here
 });
-export const seeGallery = () => ({
-  type: SEE_GALLERY
+
+export const displayAllDrawingsInGallery = (drawings) => {
+  type: DISPLAY_ALL_DRAWINGS_IN_GALLERY,
+  drawings
+}
+
+export const getGallery = (dispatch) => {
+  return dispatch => {
+    axios.get(`${API_BASE_URL}/drawings/all/${localStorage.getItem('token')}`, {
+
+    })
+    .then((response) => {
+      const drawingsArr = response.data.drawings;
+      console.log(response.data.drawings, 'drawings')
+      console.log(drawingsArr , 'drawingsArr getGallery')
+      //dispatch displayAllDrawingsInGallery
+      // dispatch(displayAllDrawingsInGallery(drawingsArr));
+
+    })
+    .then((drawingsArr) => {
+      dispatch(this.displayAllDrawingsInGallery(drawingsArr));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
   //make call to API to getAll
-});
+};
+
+
 export const selectInstruction = selectedInstructionText => ({
   type: SELECT_INSTRUCTION,
   selectedInstructionText
@@ -129,31 +156,16 @@ const storeAuthInfo = (token, dispatch) => {
     saveAuthToken(token);
 };
 
-// export const login = (username, password) => {
-//   return dispatch => {
-//     dispatch(authRequest())
-//     axios.post(`${API_BASE_URL}/user/login`, {
-//     username: username,
-//     password: password
-//   })
-//   .then(function (response) {
-//     console.log(response, 'RESPONSE');
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-//
-// };
 export const login = (username, password) => {
     return dispatch => {
       dispatch(authRequest())
       axios.post(`${API_BASE_URL}/user/login`, {
-      username: username,
-      password: password
+        username: username,
+        password: password
     })
       .then((response) => {
-      const token = response.data.data.token;
-      storeAuthInfo(token, dispatch)
+        const token = response.data.data.token;
+        storeAuthInfo(token, dispatch)
     })
     .catch(function (error) {
       console.log(error);

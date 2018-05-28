@@ -5,6 +5,7 @@ import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
 import CanvasElementWrapper from '../CanvasElementWrapper/CanvasElementWrapper';
 import {saveCanvasToGallery} from '../../actions';
+import Gallery from '../Gallery/Gallery';
 
 export class Canvas extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export class Canvas extends React.Component {
           <button className="red-button">red</button>
           <button className="green-button">green</button>
         </div>
+        <Gallery />
       </div>
     )
   }

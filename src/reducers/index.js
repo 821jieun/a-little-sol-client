@@ -2,7 +2,8 @@ import {
   SAVE_CANVAS,
   SELECT_COLOR,
   SEE_GALLERY,
-  SELECT_INSTRUCTION } from '../actions';
+  SELECT_INSTRUCTION,
+  DISPLAY_ALL_DRAWINGS_IN_GALLERY } from '../actions';
 
 const initialState = {
   selectedInstructionText: 'Select instruction to begin.',
@@ -34,6 +35,9 @@ export const solReducer = (state=initialState, action) => {
       newState.color = action.color;
       break;
 
+    case DISPLAY_ALL_DRAWINGS_IN_GALLERY:
+      newState.drawings = action.drawings;
+      break;
 
     default:
     return state;
