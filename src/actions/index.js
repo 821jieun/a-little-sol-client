@@ -7,18 +7,12 @@ import axios from 'axios';
 
 //ui reducer
 export const SCREEN_RESIZE = 'SCREEN_RESIZE';
-export const SET_CANVAS_HEIGHT = 'SET_CANVAS_HEIGHT';
 export const screenResize = (screenWidth) => {
   return {
     type: SCREEN_RESIZE,
     screenWidth
   };
 }
-
-export const setCanvasHeight = (height) => ({
-  type: SET_CANVAS_HEIGHT,
-  height
-})
 
 //sol reducer
 export const SAVE_CANVAS = 'SAVE_CANVAS';
@@ -27,7 +21,7 @@ export const SEE_GALLERY = 'SEE_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
-export const DISPLAY_ALL_DRAWINGS_IN_GALLERY = 'DISPLAY_ALL_DRAWINGS_IN_GALLERY';
+export const GET_GALLERY_SUCCESS = 'GET_GALLERY_SUCCESS';
 
 export const saveCanvasToGallery = (instruction, canvas) => {
   return dispatch => {
@@ -50,12 +44,24 @@ export const deleteCanvas = canvas => ({
   //make call to API to deleteDrawing here
 });
 
-export const displayAllDrawingsInGallery = (drawings) => {
-  type: DISPLAY_ALL_DRAWINGS_IN_GALLERY,
+export const getGallerySuccess = drawings => ({
+  type: GET_GALLERY_SUCCESS,
   drawings
-}
+});
 
-export const getGallery = (dispatch) => {
+// export const getGallery = () => dispatch => {
+//   return fetch(`${API_BASE_URL}/drawings/all/${localStorage.getItem('token')}`)
+//         .then(res => {
+//             if (!res.ok) {
+//                 return Promise.reject(res.statusText);
+//             }
+//             return res.json();
+//         })
+//         .then(drawings => {
+//             dispatch(getGallerySuccess(drawings));
+//         });
+// };
+export const getGallery = () => {
   return dispatch => {
     axios.get(`${API_BASE_URL}/drawings/all/${localStorage.getItem('token')}`, {
 
@@ -64,13 +70,14 @@ export const getGallery = (dispatch) => {
       const drawingsArr = response.data.drawings;
       console.log(response.data.drawings, 'drawings')
       console.log(drawingsArr , 'drawingsArr getGallery')
-      //dispatch displayAllDrawingsInGallery
-      // dispatch(displayAllDrawingsInGallery(drawingsArr));
+      // return response.json();
+      //dispatch getGallerySuccess
+      dispatch(getGallerySuccess(drawingsArr));
 
     })
-    .then((drawingsArr) => {
-      dispatch(this.displayAllDrawingsInGallery(drawingsArr));
-    })
+    // .then((drawingsArr) => {
+    //   dispatch(getGallerySuccess(drawingsArr));
+    // })
     .catch(function (error) {
       console.log(error);
     });

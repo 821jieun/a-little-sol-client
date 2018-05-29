@@ -1,7 +1,7 @@
 import React from 'react';
 import './Gallery.css';
 import { connect } from 'react-redux';
-import {deleteCanvas} from '../../actions/index';
+import {getGallery} from '../../actions/index';
 
 export const mapStateToProps = (state) => {
   return {
@@ -9,10 +9,14 @@ export const mapStateToProps = (state) => {
   }
 }
 export class Gallery extends React.Component {
-
-  deleteCanvas(canvas) {
-    this.props.dispatch(deleteCanvas(canvas))
+  constructor(props) {
+    super(props)
   }
+
+  componentDidMount() {
+      this.props.dispatch(getGallery())
+  }
+
 
   handleDeleteClick(index, e) {
     e.preventDefault();
@@ -20,12 +24,14 @@ export class Gallery extends React.Component {
   }
 
   render() {
-    console.log(this.props.drawings, 'inside drawings in gallery')
+    // debugger;
+    console.log(this.props)
     const galleryOptions = this.props.drawings.map((drawing, index) => {
       const instruction = drawing.instruction;
       const image = drawing.canvas;
       const id = drawing.id
-      return <li><img className="drawing" key={index} index={index} data-id={id} src={image}/><button onClick={this.handleDeleteClick.bind(this, index)}>delete</button>{instruction}</li>
+      return <li><img className="drawing" key={index} alt={instruction} index={index} data-id={id} src={image}/>{instruction}</li>
+      // return <li><img className="drawing" key={index} alt={instruction} index={index} data-id={id} src={image}/><button onClick={this.handleDeleteClick.bind(this, index)}>delete</button>{instruction}</li>
     });
 
     return (

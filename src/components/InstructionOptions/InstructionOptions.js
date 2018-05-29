@@ -13,9 +13,6 @@ export const mapStateToProps = (state) => {
 }
 
 export class InstructionOptions extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   selectInstruction(text) {
     this.props.dispatch(selectInstruction(text))

@@ -1,5 +1,5 @@
 import React from 'react';
-import {saveCanvasToGallery, screenResize, setCanvasHeight} from '../../actions';
+import {saveCanvasToGallery, screenResize} from '../../actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
