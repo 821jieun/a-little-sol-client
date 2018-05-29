@@ -30,9 +30,9 @@ const mapStateToProps = (state) => {
     }
 
     screenResize() {
-      console.log('inside canvas element wrapper')
       this.props.dispatch(screenResize(this.props.screenWidth))
     }
+    
     setCanvasHeight() {
       let height = window.innerHeight;
       this.setState({
@@ -64,6 +64,7 @@ const mapStateToProps = (state) => {
             drawing(x,y);
          }
       }
+
       //touch
       document.addEventListener("touchmove",touchMove);
       document.addEventListener("touchdown",yesDraw);
@@ -82,6 +83,7 @@ const mapStateToProps = (state) => {
       }
 
       function noDraw() { draw = false }
+
       document.addEventListener("mousemove",mouseMove);
       document.addEventListener("mousedown",yesDraw);
       document.addEventListener("mouseup",noDraw);

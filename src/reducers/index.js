@@ -2,7 +2,9 @@ import {
   SAVE_CANVAS,
   SELECT_COLOR,
   SELECT_INSTRUCTION,
-  GET_GALLERY_SUCCESS } from '../actions';
+  GET_GALLERY_SUCCESS,
+  ON_SUCCESSFUL_DELETE
+} from '../actions';
 
 const initialState = {
   selectedInstructionText: 'Select instruction to begin.',
@@ -21,6 +23,11 @@ export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type) {
+    case ON_SUCCESSFUL_DELETE:
+    newState.drawings = newState.drawings.filter((drawing) => {
+      return drawing.id !== action.id
+    })
+    break;
 
     case SELECT_INSTRUCTION:
       newState.selectedInstructionText = action.selectedInstructionText;

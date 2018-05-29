@@ -22,6 +22,7 @@ export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';
 export const GET_GALLERY_SUCCESS = 'GET_GALLERY_SUCCESS';
+export const ON_SUCCESSFUL_DELETE = 'ON_SUCCESSFUL_DELETE';
 
 export const saveCanvasToGallery = (instruction, canvas) => {
   return dispatch => {
@@ -38,23 +39,25 @@ export const saveCanvasToGallery = (instruction, canvas) => {
   }
 }
 
-// export const deleteCanvas = canvas => ({
-//   type: DELETE_CANVAS,
-//   canvas
-//   //make call to API to deleteDrawing here
-// });
 export const deleteCanvas = (id) => {
   return dispatch => {
     axios.delete(`${API_BASE_URL}/drawings/delete/${id}/${localStorage.getItem('token')}`, {
     })
     .then(() => {
       console.log('deleted')
+      dispatch(onSuccessfulDelete(id));
     })
     .catch(function (error) {
       console.log(error);
     });
   }
 };
+
+export const onSuccessfulDelete = (id) => ({
+  type: ON_SUCCESSFUL_DELETE,
+  id
+});
+
 export const getGallerySuccess = drawings => ({
   type: GET_GALLERY_SUCCESS,
   drawings

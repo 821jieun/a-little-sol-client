@@ -14,14 +14,11 @@ export class Gallery extends React.Component {
   }
 
   componentDidMount() {
-      this.props.dispatch(getGallery())
+    this.props.dispatch(getGallery())
   }
-
 
   handleDeleteClick(id, event) {
     event.preventDefault();
-    console.log('inside handle delete')
-    console.log(id,'id')
     this.props.dispatch(deleteCanvas(id))
   }
 
