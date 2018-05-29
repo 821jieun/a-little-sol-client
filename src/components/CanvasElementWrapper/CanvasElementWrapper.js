@@ -144,10 +144,6 @@ const mapStateToProps = (state) => {
       })
     }
 
-    // resetCanvas() {
-    //   this.props.dispatch(resetCanvas(this.props.canvas));
-    // }
-
     handleColorClick(color, event) {
       event.preventDefault();
       this.setState({
@@ -174,7 +170,6 @@ const mapStateToProps = (state) => {
                 <button className="red-button" onClick={this.handleColorClick.bind(this, 'red')}>red</button>
                 <button className="green-button" onClick={this.handleColorClick.bind(this, 'green')}>green</button>
               </div>
-
           </div>
         </div>
       )

@@ -20,7 +20,6 @@ const initialState = {
   ]
 };
 
-//TODO:add resetcanvas
 //TODO: landing page components
 //TODO: logout button
 //TODO: headers showing the right links depending on logged in status
