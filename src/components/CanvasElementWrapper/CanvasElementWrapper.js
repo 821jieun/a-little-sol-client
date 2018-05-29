@@ -1,5 +1,5 @@
 import React from 'react';
-import {saveCanvasToGallery, screenResize} from '../../actions';
+import {saveCanvasToGallery, screenResize, resetCanvas} from '../../actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -19,13 +19,19 @@ const mapStateToProps = (state) => {
       super()
 
       this.state = {
-        height: window.innerHeight
+        height: window.innerHeight,
+        strokeStyle: 'black'
       }
     }
 
     componentDidMount() {
       this.setCanvasHeight();
       this.screenResize();
+      this.updateCanvas();
+      this.mobileTouchListeners();
+    }
+
+    componentDidUpdate() {
       this.updateCanvas();
       this.mobileTouchListeners();
     }
@@ -37,7 +43,7 @@ const mapStateToProps = (state) => {
       let lastPt = null;
       ctx.lineWidth = r * 2;
       ctx.lineCap = "round";//butt||square
-      ctx.fillStyle = "black";
+      ctx.strokeStyle = this.state.strokeStyle;
 
       canvas.addEventListener("touchmove", draw, false);
       canvas.addEventListener("touchend", end, false);
@@ -76,35 +82,19 @@ const mapStateToProps = (state) => {
       const r = 10; // draw radius
       ctx.lineWidth = r * 2;
       ctx.lineCap = "round";//butt||square
-      ctx.fillStyle = "black";
+      ctx.strokeStyle = this.state.strokeStyle;
       var draw = false;
       var lineStart = true;
       var lastX, lastY;
 
       function yesDraw() { draw = true; lineStart = true }
 
-      // // touch
-      // function touchMove(e) {
-      //    const bounds = canvas.getBoundingClientRect();
-      //    const x = e.pageX - bounds.left - window.scrollX;
-      //    const y = e.pageY - bounds.top - window.scrollY;
-      //    if(draw && x > -r && x < canvas.width + r && y > -r && y < canvas.height + r){
-      //       drawing(x,y);
-      //    }
-      // }
-      //
-      // //touch
-      // document.addEventListener("touchmove",touchMove);
-      // document.addEventListener("touchdown",yesDraw);
-      // document.addEventListener("touchup",noDraw);
 
       // mouse
       function mouseMove(e) {
          const bounds = canvas.getBoundingClientRect();
          const x = e.pageX - bounds.left - window.scrollX;
          const y = e.pageY - bounds.top - window.scrollY;
-         // const x = e.pageX - bounds.left - scrollX;
-         // const y = e.pageY - bounds.top - scrollY;
          if(draw && x > -r && x < canvas.width + r && y > -r && y < canvas.height + r){
             drawing(x,y);
          }
@@ -132,23 +122,49 @@ const mapStateToProps = (state) => {
     }
 
 //
-  saveCanvasToGallery(instruction, canvas) {
-    this.props.dispatch(saveCanvasToGallery(instruction, canvas))
-  }
+    saveCanvasToGallery(instruction, canvas) {
+      this.props.dispatch(saveCanvasToGallery(instruction, canvas));
+    }
 
-  handleClick(event) {
-    event.preventDefault();
-    const canvasToSaveToGallery = this.refs.canvas;
-    const canvasAsDataUrl = canvasToSaveToGallery.toDataURL();
-    this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
-  }
+    handleClick(event) {
+      event.preventDefault();
+      const canvasToSaveToGallery = this.refs.canvas;
+      const canvasAsDataUrl = canvasToSaveToGallery.toDataURL();
+      this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
+    }
+
+    handleResetClick(event) {
+      event.preventDefault();
+      this.resetCanvas();
+    }
+
+    resetCanvas() {
+      this.props.dispatch(resetCanvas(this.props.canvas));
+    }
+
+    handleColorClick(color, event) {
+      event.preventDefault();
+      this.setState({
+        strokeStyle: color
+      })
+
+      console.log(this.state.strokeStyle)
+    }
     render() {
       return (
         <div>
           <canvas id="draw" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
           <div className="save-and-reset-buttons">
             <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
-            <button className="reset-button">reset</button>
+            <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
+              <div className="color-buttons">
+                <button className="black-button" onClick={this.handleColorClick.bind(this, 'black')}>black</button>
+                <button className="blue-button" onClick={this.handleColorClick.bind(this, 'blue')}>blue</button>
+                <button className="yellow-button" onClick={this.handleColorClick.bind(this, 'yellow')}>yellow</button>
+                <button className="red-button" onClick={this.handleColorClick.bind(this, 'red')}>red</button>
+                <button className="green-button" onClick={this.handleColorClick.bind(this, 'green')}>green</button>
+              </div>
+
           </div>
         </div>
       )

@@ -4,7 +4,6 @@ import Canvas from './Canvas/Canvas';
 import LoginForm from './LoginForm/LoginForm';
 import RegisterForm from './RegisterForm/RegisterForm';
 import Gallery from './Gallery/Gallery';
-// import {onAppEnter} from '../index';
 
 export default class Main extends React.Component {
 

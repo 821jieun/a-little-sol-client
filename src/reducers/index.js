@@ -3,7 +3,8 @@ import {
   SELECT_COLOR,
   SELECT_INSTRUCTION,
   GET_GALLERY_SUCCESS,
-  ON_SUCCESSFUL_DELETE
+  ON_SUCCESSFUL_DELETE,
+  RESET_CANVAS
 } from '../actions';
 
 const initialState = {
@@ -19,10 +20,20 @@ const initialState = {
   ]
 };
 
+//TODO:add resetcanvas
+//TODO: add all the color options
+//TODO: landing page components
+//TODO: logout button
+//TODO: headers showing the right links depending on logged in status
+//TODO: figure out why the redirect to home page from login page doesn't work
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type) {
+    case RESET_CANVAS:
+    newState.canvas = '';
+    break;
+
     case ON_SUCCESSFUL_DELETE:
     newState.drawings = newState.drawings.filter((drawing) => {
       return drawing.id !== action.id

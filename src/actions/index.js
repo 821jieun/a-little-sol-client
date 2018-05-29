@@ -87,8 +87,9 @@ export const selectColor = color => ({
   type: SELECT_COLOR,
   color
 });
-export const resetCanvas = canvas => ({
-  type: RESET_CANVAS
+export const resetCanvas = (canvas) => ({
+  type: RESET_CANVAS,
+  canvas
 });
 
 //form reducer

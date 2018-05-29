@@ -16,13 +16,6 @@ export class Canvas extends React.Component {
         <InstructionOptions />
         <InstructionText text={this.props.selectedInstructionText}/>
         <CanvasElementWrapper />
-        <div className="color-buttons">
-          <button className="black-button">black</button>
-          <button className="blue-button">blue</button>
-          <button className="yellow-button">yellow</button>
-          <button className="red-button">red</button>
-          <button className="green-button">green</button>
-        </div>
       </div>
     )
   }
@@ -33,9 +26,7 @@ export const mapStateToProps = state => ({
   instruction: state.instruction,
   drawings: state.drawings,
   canvas: state.canvas,
-  currentlyDrawing: state.currentlyDrawing,
-  selectedInstructionText: state.selectedInstructionText,
-  canvasSize: state.canvasSize
+  selectedInstructionText: state.selectedInstructionText
 })
 
 
