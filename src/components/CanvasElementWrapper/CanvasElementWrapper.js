@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
 
       this.state = {
         height: window.innerHeight,
-        strokeStyle: 'black'
+        strokeStyle: 'black',
+        clearRect: false
       }
     }
 
@@ -87,7 +88,10 @@ const mapStateToProps = (state) => {
       var lineStart = true;
       var lastX, lastY;
 
-      function yesDraw() { draw = true; lineStart = true }
+      function yesDraw() {
+        draw = true;
+        lineStart = true;
+      }
 
 
       // mouse
@@ -135,12 +139,14 @@ const mapStateToProps = (state) => {
 
     handleResetClick(event) {
       event.preventDefault();
-      this.resetCanvas();
+      this.setState({
+        clearRect: true
+      })
     }
 
-    resetCanvas() {
-      this.props.dispatch(resetCanvas(this.props.canvas));
-    }
+    // resetCanvas() {
+    //   this.props.dispatch(resetCanvas(this.props.canvas));
+    // }
 
     handleColorClick(color, event) {
       event.preventDefault();
@@ -148,9 +154,13 @@ const mapStateToProps = (state) => {
         strokeStyle: color
       })
 
-      console.log(this.state.strokeStyle)
     }
     render() {
+      if (this.state.clearRect) {
+        const canvas = this.refs.canvas;
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0,  canvas.width, canvas.height);
+      }
       return (
         <div>
           <canvas id="draw" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
