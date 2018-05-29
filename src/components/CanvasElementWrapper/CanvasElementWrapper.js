@@ -35,7 +35,6 @@ const mapStateToProps = (state) => {
     }
     setCanvasHeight() {
       let height = window.innerHeight;
-      console.log(`i, the canvas, herby declare, i am this tall! ${height}`)
       this.setState({
         height: height
       })
@@ -111,7 +110,6 @@ const mapStateToProps = (state) => {
     event.preventDefault();
     const canvasToSaveToGallery = this.refs.canvas;
     const canvasAsDataUrl = canvasToSaveToGallery.toDataURL();
-    debugger;
     this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
   }
     render() {

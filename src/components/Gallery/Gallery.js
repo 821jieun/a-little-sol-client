@@ -1,7 +1,7 @@
 import React from 'react';
 import './Gallery.css';
 import { connect } from 'react-redux';
-import {getGallery} from '../../actions/index';
+import {getGallery, deleteCanvas} from '../../actions/index';
 
 export const mapStateToProps = (state) => {
   return {
@@ -18,21 +18,22 @@ export class Gallery extends React.Component {
   }
 
 
-  handleDeleteClick(index, e) {
-    e.preventDefault();
-    this.deleteCanvas(index)
+  handleDeleteClick(id, event) {
+    event.preventDefault();
+    console.log('inside handle delete')
+    console.log(id,'id')
+    this.props.dispatch(deleteCanvas(id))
   }
 
   render() {
-  
+
     const galleryOptions = this.props.drawings.map((drawing, index) => {
       const instruction = drawing.instruction;
       const image = `${drawing.canvas}`;
-
-      console.log(image, 'image')
       const id = drawing.id
-      return <li key={index}><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>{instruction}</li>
-      // return <li><img className="drawing" key={index} alt={instruction} index={index} data-id={id} src={image}/><button onClick={this.handleDeleteClick.bind(this, index)}>delete</button>{instruction}</li>
+      return <li key={index}><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>
+      {instruction}
+      <button onClick={this.handleDeleteClick.bind(this, id)}>delete</button></li>
     });
 
     return (

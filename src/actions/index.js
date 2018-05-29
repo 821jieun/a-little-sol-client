@@ -38,29 +38,29 @@ export const saveCanvasToGallery = (instruction, canvas) => {
   }
 }
 
-export const deleteCanvas = canvas => ({
-  type: DELETE_CANVAS,
-  canvas
-  //make call to API to deleteDrawing here
-});
-
+// export const deleteCanvas = canvas => ({
+//   type: DELETE_CANVAS,
+//   canvas
+//   //make call to API to deleteDrawing here
+// });
+export const deleteCanvas = (id) => {
+  return dispatch => {
+    axios.delete(`${API_BASE_URL}/drawings/delete/${id}/${localStorage.getItem('token')}`, {
+    })
+    .then(() => {
+      console.log('deleted')
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+};
 export const getGallerySuccess = drawings => ({
   type: GET_GALLERY_SUCCESS,
   drawings
 });
 
-// export const getGallery = () => dispatch => {
-//   return fetch(`${API_BASE_URL}/drawings/all/${localStorage.getItem('token')}`)
-//         .then(res => {
-//             if (!res.ok) {
-//                 return Promise.reject(res.statusText);
-//             }
-//             return res.json();
-//         })
-//         .then(drawings => {
-//             dispatch(getGallerySuccess(drawings));
-//         });
-// };
+
 export const getGallery = () => {
   return dispatch => {
     axios.get(`${API_BASE_URL}/drawings/all/${localStorage.getItem('token')}`, {
@@ -68,23 +68,13 @@ export const getGallery = () => {
     })
     .then((response) => {
       const drawingsArr = response.data.drawings;
-      console.log(response.data.drawings, 'drawings')
-      console.log(drawingsArr , 'drawingsArr getGallery')
-      // return response.json();
-      //dispatch getGallerySuccess
       dispatch(getGallerySuccess(drawingsArr));
-
     })
-    // .then((drawingsArr) => {
-    //   dispatch(getGallerySuccess(drawingsArr));
-    // })
     .catch(function (error) {
       console.log(error);
     });
   }
-  //make call to API to getAll
 };
-
 
 export const selectInstruction = selectedInstructionText => ({
   type: SELECT_INSTRUCTION,
