@@ -4,19 +4,38 @@ import {registerUser} from '../../actions/index';
 import {login} from '../../actions/index';
 import Input from '../Input/Input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
+import { Redirect } from 'react-router-dom';
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
+
 export class RegistrationForm extends React.Component {
+    constructor(props) {
+      super(props)
+
+      this.state = {
+        redirectToHome: false
+      }
+    }
+
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
         return this.props
             .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(login(username, password)));
+            .then(() => this.props.dispatch(login(username, password)))
+            .then(() => {
+              this.setState({
+                redirectToHome: true
+              })
+            })
+
     }
 
     render() {
+      if (this.state.redirectToHome) {
+        return <Redirect to="/" />
+      } 
         return (
             <form
                 className="login-form"

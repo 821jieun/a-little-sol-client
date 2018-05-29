@@ -23,7 +23,6 @@ export class Canvas extends React.Component {
           <button className="red-button">red</button>
           <button className="green-button">green</button>
         </div>
-        <Gallery />
       </div>
     )
   }

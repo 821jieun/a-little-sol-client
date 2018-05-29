@@ -110,7 +110,8 @@ const mapStateToProps = (state) => {
   handleClick(event) {
     event.preventDefault();
     const canvasToSaveToGallery = this.refs.canvas;
-    const canvasAsDataUrl = canvasToSaveToGallery.toDataURL('image/jpeg');
+    const canvasAsDataUrl = canvasToSaveToGallery.toDataURL();
+    debugger;
     this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
   }
     render() {

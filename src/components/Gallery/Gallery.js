@@ -24,13 +24,14 @@ export class Gallery extends React.Component {
   }
 
   render() {
-    // debugger;
-    console.log(this.props)
+  
     const galleryOptions = this.props.drawings.map((drawing, index) => {
       const instruction = drawing.instruction;
-      const image = drawing.canvas;
+      const image = `${drawing.canvas}`;
+
+      console.log(image, 'image')
       const id = drawing.id
-      return <li><img className="drawing" key={index} alt={instruction} index={index} data-id={id} src={image}/>{instruction}</li>
+      return <li key={index}><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>{instruction}</li>
       // return <li><img className="drawing" key={index} alt={instruction} index={index} data-id={id} src={image}/><button onClick={this.handleDeleteClick.bind(this, index)}>delete</button>{instruction}</li>
     });
 

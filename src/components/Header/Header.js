@@ -10,7 +10,7 @@ export default class Header extends React.Component {
         <Link to="/"><h1 className="header-text">a little sol</h1></Link>
         <Link to="/logout" className="logout-link">logout</Link>
         <Link to="/gallery" className="gallery-link">my gallery</Link>
-        <Link to="/signup" className="signup-link">signup</Link>
+        <Link to="/register" className="signup-link">register</Link>
         <Link to="/login" className="login-link">login</Link>
       </div>
 
