@@ -15,13 +15,13 @@ export class LoginForm extends React.Component {
     }
 
     onSubmit(values) {
-        return this.props
-            .dispatch(login(values.username, values.password))
-            .then(() => {
-              this.setState({
-                redirectToHome: true
-              })
-            })
+      const {username, password} = values
+        return this.props.dispatch(login(username, password))
+                         .then(() => {
+                           this.setState({
+                             redirectToHome: true
+                           })
+                         })
     }
 
     render() {

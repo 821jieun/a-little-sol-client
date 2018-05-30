@@ -35,7 +35,7 @@ export default class LandingPageContent extends React.Component {
                   <h3>Save any works that delight you</h3>
               </header>
               <img src={wallDrawing1112} alt="sol le witt's wall drawing #1112"/>
-              <p>Over time, you can create your own gallery, revealing the beauty in variation of an idea.</p>
+              <p>Over time, you can create your own gallery, cultivating your own variations on a theme.</p>
             </section>
             <section>
               <header>

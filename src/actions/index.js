@@ -58,7 +58,7 @@ export const onSuccessfulDelete = (id) => ({
   id
 });
 
-export const getGallerySuccess = drawings => ({
+export const getGallerySuccess = (drawings) => ({
   type: GET_GALLERY_SUCCESS,
   drawings
 });
@@ -173,7 +173,3 @@ export const login = (username, password) => {
     });
   };
 };
-
-export const logout = () => ({
-  type: LOGOUT
-});

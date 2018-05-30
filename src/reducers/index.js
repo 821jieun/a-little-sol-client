@@ -20,11 +20,10 @@ const initialState = {
   ]
 };
 
-//TODO: landing page components
-//TODO: logout button
-//TODO: headers showing the right links depending on logged in status
-//TODO: figure out why the redirect to home page from login page doesn't work
+//TODO: tests
+//TODO: figure out why the redirect to home page from after logging in doesn't work
 //TODO: demo login
+//TODO: css!!!
 
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
