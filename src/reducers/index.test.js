@@ -46,22 +46,24 @@ describe('solReducer', () => {
         expect(state).toBe(currentState);
     });
 })
-    describe('save canvas', () => {
 
-        it('Should save new canvas', () => {
-          const canvasOne = 'canvas1';
-          const initialState = {
 
-            canvas: ''
+  describe('save canvas', () => {
 
-          };
-            const newState = solReducer(initialState, {type: SAVE_CANVAS, canvas: canvasOne});
-            expect(newState).toEqual({
-                canvas: canvasOne
-            });
-        });
-    });
-    
+      it('Should save new canvas', () => {
+        const canvasOne = 'canvas1';
+        const initialState = {
+
+          canvas: ''
+
+        };
+          const newState = solReducer(initialState, {type: SAVE_CANVAS, canvas: canvasOne});
+          expect(newState).toEqual({
+              canvas: canvasOne
+          });
+      });
+  });
+
     describe('select instruction text', () => {
 
         it('Select instruction text', () => {
