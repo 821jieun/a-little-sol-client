@@ -4,7 +4,6 @@ import InstructionOptions from '../../components/InstructionOptions/InstructionO
 import InstructionText from '../../components/InstructionText/InstructionText';
 import { connect } from 'react-redux';
 import CanvasElementWrapper from '../CanvasElementWrapper/CanvasElementWrapper';
-import Gallery from '../Gallery/Gallery';
 
 export class Canvas extends React.Component {
 
