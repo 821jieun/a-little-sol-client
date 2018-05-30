@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingPageContent.css';
+import RegisterForm from '../RegisterForm/RegisterForm';
 var wallDrawing46 = require('./images/wallDrawing46.jpg');
 var wallDrawing65 = require('./images/wallDrawing65.png');
 var wallDrawing579 = require('./images/wallDrawing579.png');
@@ -13,6 +14,7 @@ export default class LandingPageContent extends React.Component {
       <main role="main">
             <header role="banner">
               <h2>the art of an idea</h2>
+              <p>"The idea becomes a machine that makes the art." -Sol LeWitt (1965)</p>
             </header>
             <section>
               <header>
@@ -33,31 +35,13 @@ export default class LandingPageContent extends React.Component {
                   <h3>Save any works that delight you</h3>
               </header>
               <img src={wallDrawing1112} alt="sol le witt's wall drawing #1112"/>
-              <p>Over time, you can create your own gallery of many versions of the same instructions, revealing the beauty in variation of an idea.</p>
+              <p>Over time, you can create your own gallery, revealing the beauty in variation of an idea.</p>
             </section>
             <section>
               <header>
                   <h3>Start Drawing Now</h3>
               </header>
-              <form className='signup-form'>
-                  <div>
-                    <label htmlFor="first-name">First name</label>
-                    <input placeholder='First Name' type="text" name='first-name' id='first-name' />
-                  </div>
-                  <div>
-                    <label htmlFor="last-name">Last name</label>
-                    <input type="text" name='last-name' id='last-name' placeholder='Last Name' />
-                  </div>
-                  <div>
-                    <label htmlFor="username">Email</label>
-                    <input type="text" name='username' id='username' />
-                  </div>
-                  <div>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name='password' id='password' />
-                  </div>
-                  <button type='submit'>Sign Up</button>
-              </form>
+              <RegisterForm />
             </section>
           </main>
       </div>
