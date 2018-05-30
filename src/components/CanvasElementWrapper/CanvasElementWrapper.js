@@ -159,7 +159,7 @@ const mapStateToProps = (state) => {
       }
       return (
         <div>
-          <canvas id="draw" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
+          <canvas id="draw" className="canvas" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
           <div className="save-and-reset-buttons">
             <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
             <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
