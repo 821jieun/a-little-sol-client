@@ -17,7 +17,7 @@ export const screenResize = (screenWidth) => {
 //sol reducer
 export const SAVE_CANVAS = 'SAVE_CANVAS';
 export const SELECT_COLOR = 'SELECT_COLOR';
-export const SEE_GALLERY = 'SEE_GALLERY';
+export const GET_GALLERY = 'GET_GALLERY';
 export const RESET_CANVAS = 'RESET_CANVAS';
 export const SELECT_INSTRUCTION = 'SELECT_INSTRUCTION';
 export const DELETE_CANVAS = 'DELETE_CANVAS';

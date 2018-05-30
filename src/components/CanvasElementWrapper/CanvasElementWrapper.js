@@ -161,7 +161,7 @@ const mapStateToProps = (state) => {
         <div>
           <canvas id="draw" className="canvas" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>
           <div className="save-and-reset-buttons">
-            <button className="save-button" onClick={this.handleClick.bind(this)}>save</button>
+            <button id="save" className="save-button" onClick={this.handleClick.bind(this)}>save</button>
             <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
               <div className="color-buttons">
                 <button className="black-button" onClick={this.handleColorClick.bind(this, 'black')}>black</button>

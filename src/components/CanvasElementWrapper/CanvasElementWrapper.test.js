@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { shallow, mount } from 'enzyme';
 import { shallowWithStore } from 'enzyme-redux';
 import { createMockStore } from 'redux-test-utils';
+import {saveCanvasToGallery} from '../../actions';
 
 import CanvasElementWrapper from './CanvasElementWrapper';
 
@@ -27,7 +28,6 @@ describe('<CanvasElementWrapper />', () => {
       });
       const ConnectedComponent = connect(mapStateToProps)(ReactComponent);
       const component = shallowWithStore(<ConnectedComponent />, createMockStore(expectedState));
-      console.log(component.length)
       expect((component).length).toEqual(1);
       // expect(component).to.have.property('length', 1);
     });
