@@ -7,10 +7,9 @@ import { createMockStore } from 'redux-test-utils';
 import CanvasElementWrapper from './CanvasElementWrapper';
 
 describe('<CanvasElementWrapper />', () => {
-  // const ReactComponent = () => (<div>dummy component</div>);
   const ReactComponent = () => (<CanvasElementWrapper />);
   describe('state', () => {
-    it('works', () => {
+    it('renders without crashing', () => {
       const expectedState = 'expectedState';
       const mapStateToProps = (state) => ({
         state,
