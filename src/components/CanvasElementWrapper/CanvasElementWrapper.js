@@ -1,13 +1,15 @@
 import React from 'react';
 import {saveCanvasToGallery, screenResize} from '../../actions';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
 
   return {
     selectedInstructionText: state.sol.selectedInstructionText,
     canvas: state.sol.canvas,
-    screenWidth: state.ui.screenWidth
+    screenWidth: state.ui.screenWidth,
+    currentUser: state.auth.currentUser
   }
 
 };
@@ -21,7 +23,8 @@ const mapStateToProps = (state) => {
       this.state = {
         height: window.innerHeight,
         strokeStyle: 'black',
-        clearRect: false
+        clearRect: false,
+        redirectToLogin: false
       }
     }
 
@@ -157,6 +160,10 @@ const mapStateToProps = (state) => {
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0,  canvas.width, canvas.height);
       }
+      // //check if logged in here
+      // if (!this.props.currentUser) {
+      //   return <Redirect to="/login" />
+      // }
       return (
         <div>
           <canvas id="draw" className="canvas" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>

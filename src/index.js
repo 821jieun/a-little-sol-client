@@ -23,6 +23,7 @@ if (authToken) {
 
 window.addEventListener('resize', () => {
     store.dispatch(screenResize(window.innerWidth));
+
 });
 
 ReactDOM.render(

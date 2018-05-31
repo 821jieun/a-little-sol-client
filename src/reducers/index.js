@@ -22,8 +22,10 @@ const initialState = {
 
 //TODO: tests
 //TODO: figure out why the redirect to home page from after logging in doesn't work
-//TODO: demo login
-//TODO: css!!!
+//TODO: figure out why the redirect to login page after logging out doesn't work
+//TODO: figure out why the header doesn't display the correct links after logging out
+//TODO: demo login account
+//TODO: css!!! 
 
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);

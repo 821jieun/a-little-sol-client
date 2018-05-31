@@ -111,6 +111,7 @@ export const authRequest = () => ({
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
+
     type: AUTH_SUCCESS,
     currentUser
 });
@@ -120,6 +121,7 @@ export const authError = error => ({
     type: AUTH_ERROR,
     error
 });
+
 export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
@@ -150,10 +152,10 @@ export const registerUser = (user) => {
 };
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
-const storeAuthInfo = (token, dispatch) => {
+const storeAuthInfo = (token, username, dispatch) => {
     const decodedToken = jwtDecode(token);
     dispatch(setAuthToken(token));
-    dispatch(authSuccess(decodedToken.user));
+    dispatch(authSuccess(username));
     saveAuthToken(token);
 };
 
@@ -166,7 +168,8 @@ export const login = (username, password) => {
     })
       .then((response) => {
         const token = response.data.data.token;
-        storeAuthInfo(token, dispatch)
+        const username = response.data.data.username;
+        return storeAuthInfo(token, username, dispatch)
     })
     .catch(function (error) {
       console.log(error);

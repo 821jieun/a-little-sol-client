@@ -12,8 +12,8 @@ export default class Main extends React.Component {
     return(
       <main>
         <Switch>
-          <Route exact path="/" component={Canvas} />
-          <Route exact path="/landingpage" component={LandingPageContent} />
+          <Route exact path="/" component={LandingPageContent}/>
+          <Route path="/canvas" component={Canvas} />
           <Route path="/login" component={LoginForm} />
           <Route path="/register" component={RegisterForm} />
           <Route path="/gallery" component={Gallery} />

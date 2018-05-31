@@ -34,11 +34,11 @@ export class RegistrationForm extends React.Component {
 
     render() {
       if (this.state.redirectToHome) {
-        return <Redirect to="/" />
-      } 
+        return <Redirect to="/canvas" />
+      }
         return (
             <form
-                className="login-form"
+                className="register-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
