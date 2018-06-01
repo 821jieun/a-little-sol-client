@@ -159,20 +159,113 @@ const storeAuthInfo = (token, username, dispatch) => {
     saveAuthToken(token);
 };
 
-export const login = (username, password) => {
-    return dispatch => {
-      dispatch(authRequest())
-      axios.post(`${API_BASE_URL}/user/login`, {
-        username: username,
-        password: password
-    })
-      .then((response) => {
-        const token = response.data.data.token;
-        const username = response.data.data.username;
-        return storeAuthInfo(token, username, dispatch)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  };
+// export const login = (username, password) => {
+//     return dispatch => {
+//       dispatch(authRequest())
+//       axios.post(`${API_BASE_URL}/user/login`, {
+//         username: username,
+//         password: password
+//     })
+    // .then(res => normalizeResponseErrors(res))
+    // .then(res => res.json())
+
+    // .then((res) => {
+    //   const token = res.data.data.token;
+    //   const username = res.data.data.username;
+    //   return storeAuthInfo(token, username, dispatch)
+    // })
+    // .then(({ errors }) => errors || null).catch(() => null)
+
+    // .catch(err => {
+    //     const {code} = err;
+    //     const message =
+    //         code === 401
+    //             ? 'Incorrect username or password'
+    //             : 'Unable to login, please try again';
+    //     dispatch(authError(err));
+    //     // Could not authenticate, so return a SubmissionError for Redux
+    //     // Form
+    //     return Promise.reject(
+    //         new SubmissionError({
+    //             _error: message
+    //         })
+    //     )
+    // })
+// export const login = (username, password) => {
+//     return dispatch => {
+//       dispatch(authRequest())
+//       axios.post(`${API_BASE_URL}/user/login`, {
+//         username: username,
+//         password: password
+//     })
+//       .then((response) => {
+//         const token = response.data.data.token;
+//         const username = response.data.data.username;
+//         return storeAuthInfo(token, username, dispatch)
+//     })
+//     .catch(err => {
+//         const {code} = err;
+//         const message =
+//             code === 401
+//                 ? 'Incorrect username or password'
+//                 : 'Unable to login, please try again';
+//         dispatch(authError(err));
+//         // Could not authenticate, so return a SubmissionError for Redux
+//         // Form
+//         return Promise.reject(
+//             new SubmissionError({
+//                 _error: message
+//             })
+//         );
+//     })
+//     .catch(function (error) {
+//       const message = 'Unable to login, please try again';
+//       dispatch(authError(message));
+//       // dispatch(authError(error));
+//
+//       console.log(error);
+//     });
+//   };
+// };
+
+
+export const login = (username, password) => dispatch => {
+    dispatch(authRequest());
+    return (
+        fetch(`${API_BASE_URL}/user/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                password
+            })
+        })
+            // Reject any requests which don't return a 200 status, creating
+            // errors which follow a consistent format
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .then((res) => {
+              console.log(res, 'res here')
+                 const token = res.data.token;
+                 const username = res.data.username;
+                 return storeAuthInfo(token, username, dispatch)
+             })
+            .catch(err => {
+                const {code} = err;
+                const message =
+                    code === 401
+                        ? 'Incorrect username or password'
+                        : 'Unable to login, please try again';
+                dispatch(authError(err));
+                // Could not authenticate, so return a SubmissionError for Redux
+                // Form
+                return Promise.reject(
+                    new SubmissionError({
+                        _error: message
+                    })
+                );
+            })
+    );
 };

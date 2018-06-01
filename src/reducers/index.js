@@ -20,12 +20,14 @@ const initialState = {
   ]
 };
 
-//TODO: tests
-//TODO: figure out why the redirect to home page from after logging in doesn't work
-//TODO: figure out why the redirect to login page after logging out doesn't work
-//TODO: figure out why the header doesn't display the correct links after logging out
+
+//TODO: figure out why incorrect login info still redirects to canvas
+//TODO: figure out why error message does not display upon incorrect login info
 //TODO: demo login account
-//TODO: css!!! 
+//TODO: css!!!
+//TODO: refactoring so that request/do/error is setup
+//TODO: a11y
+//TODO: wrap canvaselementwrapper in requires login component?
 
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
