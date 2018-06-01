@@ -160,7 +160,7 @@ const mapStateToProps = (state) => {
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0,  canvas.width, canvas.height);
       }
-  
+
       return (
         <div>
           <canvas id="draw" className="canvas" ref="canvas" height={this.state.height} width={this.props.screenWidth}></canvas>

@@ -21,13 +21,10 @@ const initialState = {
 };
 
 
-//TODO: figure out why incorrect login info still redirects to canvas
-//TODO: figure out why error message does not display upon incorrect login info
 //TODO: demo login account
 //TODO: css!!!
-//TODO: refactoring so that request/do/error is setup
 //TODO: a11y
-//TODO: wrap canvaselementwrapper in requires login component?
+//TODO: why does touch mobile screen draw so much below the "finger"
 
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
