@@ -3,7 +3,6 @@ import './LandingPageContent.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 var wallDrawing46 = require('./images/wallDrawing46.jpg');
 var wallDrawing65 = require('./images/wallDrawing65.png');
-var wallDrawing579 = require('./images/wallDrawing579.png');
 var wallDrawing1112 = require('./images/wallDrawing1112.png');
 
 export default class LandingPageContent extends React.Component {

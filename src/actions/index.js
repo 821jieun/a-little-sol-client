@@ -2,7 +2,7 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {SubmissionError} from 'redux-form';
 import jwtDecode from 'jwt-decode';
-import {saveAuthToken, clearAuthToken} from '../local-storage';
+import {saveAuthToken} from '../local-storage';
 import axios from 'axios';
 
 //ui reducer
