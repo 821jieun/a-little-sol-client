@@ -20,7 +20,7 @@ const initialState = {
   ]
 };
 
-
+//TODO: why does landing page photo not resize upon screen resize
 //TODO: demo login account
 //TODO: css!!!
 //TODO: a11y

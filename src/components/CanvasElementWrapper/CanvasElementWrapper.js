@@ -1,7 +1,6 @@
 import React from 'react';
 import {saveCanvasToGallery, screenResize} from '../../actions';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
 
@@ -43,7 +42,7 @@ const mapStateToProps = (state) => {
     mobileTouchListeners() {
       const canvas = this.refs.canvas;
       const ctx = canvas.getContext("2d");
-      const r = 10; // draw radius
+      const r = 5; // draw radius
       let lastPt = null;
       ctx.lineWidth = r * 2;
       ctx.lineCap = "round";//butt||square

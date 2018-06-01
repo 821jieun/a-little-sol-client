@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../../actions/index';
 import {login} from '../../actions/index';
 import Input from '../Input/Input';
+import {Redirect} from 'react-router-dom';
 import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
