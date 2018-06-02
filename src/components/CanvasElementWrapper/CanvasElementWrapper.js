@@ -170,7 +170,7 @@ const mapStateToProps = (state) => {
             width={this.props.screenWidth}
             aria-live="assertive"
             role="img"
-            aria-label="alt text"></canvas>
+            aria-label="drawing canvas"></canvas>
           <div className="save-and-reset-buttons">
             <button id="save" className="save-button" onClick={this.handleClick.bind(this)}>save</button>
             <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
