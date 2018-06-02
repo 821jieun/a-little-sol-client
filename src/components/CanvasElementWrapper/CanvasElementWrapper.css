@@ -1,3 +1,66 @@
 canvas {
-  outline: 1px solid black;
+  outline: 1px dotted black;
+}
+
+.black-button {
+  font-family: 'Merriweather', serif;
+  background: black;
+  color: white;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.blue-button {
+  font-family: 'Merriweather', serif;
+  background: blue;
+  color: white;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.yellow-button {
+  font-family: 'Merriweather', serif;
+  background: yellow;
+  color: black;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.red-button {
+  font-family: 'Merriweather', serif;
+  background: red;
+  color: white;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.green-button {
+  font-family: 'Merriweather', serif;
+  background: green;
+  color: white;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.save-button {
+  font-family: 'Merriweather', serif;
+  border-radius: 30%;
+  height: 50px;
+  color: #0D3B66;
+  background: #EDC7CF;
+  width: 30%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.reset-button {
+  font-family: 'Merriweather', serif;
+  border-radius: 30%;
+  height: 50px;
+  color: #0D3B66;
+  background: #EDC7CF;
+  width: 30%;
+  margin-bottom: 10px;
+  font-size: 14px;
+
 }

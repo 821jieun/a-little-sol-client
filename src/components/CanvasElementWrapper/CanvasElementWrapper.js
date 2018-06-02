@@ -1,6 +1,7 @@
 import React from 'react';
 import {saveCanvasToGallery, screenResize} from '../../actions';
 import { connect } from 'react-redux';
+import './CanvasElementWrapper.css';
 
 const mapStateToProps = (state) => {
 
