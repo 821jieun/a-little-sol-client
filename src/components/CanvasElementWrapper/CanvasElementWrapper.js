@@ -63,8 +63,9 @@ const mapStateToProps = (state) => {
           ctx.stroke();
         }
         lastPt = {x: e.touches[0].pageX, y:e.touches[0].pageY};
-      }
+        console.log(lastPt)
 
+      }
       function end(e) {
         e.preventDefault();
         lastPt = null;

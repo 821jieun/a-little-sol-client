@@ -7,7 +7,10 @@ canvas {
   background: black;
   color: white;
   height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 15%;
+  border-radius: 30%;
+
 }
 
 .blue-button {
@@ -15,7 +18,9 @@ canvas {
   background: blue;
   color: white;
   height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 15%;
+  border-radius: 30%;
 }
 
 .yellow-button {
@@ -23,7 +28,9 @@ canvas {
   background: yellow;
   color: black;
   height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 15%;
+  border-radius: 30%;
 }
 
 .red-button {
@@ -31,7 +38,9 @@ canvas {
   background: red;
   color: white;
   height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 15%;
+  border-radius: 30%;
 }
 
 .green-button {
@@ -39,7 +48,9 @@ canvas {
   background: green;
   color: white;
   height: 50px;
-  margin-right: 5px;
+  margin-right: 10px;
+  width: 15%;
+  border-radius: 30%;
 }
 
 .save-button {
@@ -47,10 +58,11 @@ canvas {
   border-radius: 30%;
   height: 50px;
   color: #0D3B66;
-  background: #EDC7CF;
-  width: 30%;
+  background: #FFFC99;
+  /* width: 30%; */
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .reset-button {
@@ -58,9 +70,9 @@ canvas {
   border-radius: 30%;
   height: 50px;
   color: #0D3B66;
-  background: #EDC7CF;
-  width: 30%;
+  background: #FFFC99;
+  /* width: 30%; */
   margin-bottom: 10px;
-  font-size: 14px;
-
+  font-size: 20px;
+  font-weight: bold;
 }
