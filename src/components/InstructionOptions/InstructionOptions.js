@@ -30,7 +30,7 @@ export class InstructionOptions extends React.Component {
       let option = instruction.option;
       let instructionClassName = option.split(" ").join("-");
 
-      return <li key={index}><a className={instructionClassName} index={index} onClick={this.handleClick.bind(this, index)} href="#">{option}</a></li>
+      return <li key={index}><a className={instructionClassName} alt={instructionClassName} index={index} onClick={this.handleClick.bind(this, index)} href="#">{option}</a></li>
 
     });
 
