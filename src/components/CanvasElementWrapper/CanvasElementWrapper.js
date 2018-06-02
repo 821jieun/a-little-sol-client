@@ -38,87 +38,7 @@ const mapStateToProps = (state) => {
     componentDidUpdate() {
       this.updateCanvas();
       this.mobileTouchListeners();
-      this.keyboardListeners();
-
     }
-
-
-keyboardListeners() {
-  //for keyboard functionality
-  document.addEventListener("keydown", doKeyDown, true);
-
-  const canvas = this.refs.canvas;
-  const ctx = canvas.getContext("2d");
-  const r = 5; // draw radius
-  let lastPt = null;
-  ctx.lineWidth = r * 2;
-  ctx.lineCap = "round";//butt||square
-  ctx.strokeStyle = this.state.strokeStyle;
-
-  var dx = 5;
-  var dy = 5;
-  var x = 150;
-  var y = 100;
-  var WIDTH = 300;
-  var HEIGHT = 200;
-
-  function circle(x,y,r) {
-  ctx.beginPath();
-  ctx.arc(x, y, r, 0, Math.PI*2, true);
-  ctx.fill();
-  }
-
-  function rect(x,y,w,h) {
-  ctx.beginPath();
-  ctx.rect(x,y,w,h);
-  ctx.closePath();
-  ctx.fill();
-  ctx.stroke();
-  }
-
-  function clear() {
-  ctx.clearRect(0, 0, WIDTH, HEIGHT);
-  }
-
-
-  function drawKeyboard() {
-    clear();
-    ctx.fillStyle = "white";
-    ctx.strokeStyle = "black";
-    rect(0,0,WIDTH,HEIGHT);
-    ctx.fillStyle = "purple";
-    circle(x, y, 10);
-  }
-
-  function doKeyDown(evt) {
-    switch (evt.keyCode) {
-    case 38:  /* Up arrow was pressed */
-    if (y - dy > 0){
-    y -= dy;
-    }
-    break;
-    case 40:  /* Down arrow was pressed */
-    if (y + dy < HEIGHT){
-    y += dy;
-    }
-    break;
-    case 37:  /* Left arrow was pressed */
-    if (x - dx > 0){
-    x -= dx;
-    }
-    break;
-    case 39:  /* Right arrow was pressed */
-    if (x + dx < WIDTH){
-    x += dx;
-    }
-    break;
-    }
-  }
-  return setInterval(drawKeyboard, 10);
-
-}
-
-
 
 //
     //for mobile touch functionality
@@ -255,6 +175,7 @@ keyboardListeners() {
             aria-live="assertive"
             role="img"
             aria-label="drawing canvas"
+            aria-atomic="true"
             tabindex="0">Unfortunately, your browser does not support HTML5 Canvas.
           </canvas>
           <div className="save-and-reset-buttons">

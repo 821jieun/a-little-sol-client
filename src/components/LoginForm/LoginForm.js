@@ -19,16 +19,8 @@ export class LoginForm extends React.Component {
             .dispatch(login(values.username, values.password))
             .then(() => {
               this.setState({ redirectToHome: true})
-            })    
+            })
     }
-    // onSubmit(values) {
-    //       return this.props.dispatch(login(values.username, values.password));
-    //       this.setState({ redirectToHome: true})
-    // }
-    // onSubmit(values) {
-    //       this.props.dispatch(login(values.username, values.password));
-    //       this.setState({ redirectToHome: true})
-    // }
 
     render() {
         let error;
