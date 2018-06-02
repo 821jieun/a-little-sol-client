@@ -21,7 +21,7 @@ const initialState = {
 };
 
 //TODO: why does landing page photo not resize upon screen resize
-//TODO: demo login account
+//TODO: demo login account, tests 
 //TODO: css!!!
 //TODO: a11y
 //TODO: why does touch mobile screen draw so much below the "finger"

@@ -153,7 +153,6 @@ export const registerUser = (user) => {
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (token, username, dispatch) => {
-    // const decodedToken = jwtDecode(token);
     dispatch(setAuthToken(token));
     dispatch(authSuccess(username));
     saveAuthToken(token);
