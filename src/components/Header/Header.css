@@ -3,15 +3,44 @@
   color: #FAF0CA;
   width: 100%;
   overflow: hidden;
+  /* font-family: Georgia, serif */
+  font-family: 'Merriweather', serif;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .header-text {
-  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
   color: #FAF0CA;
+}
+
+h1.header-text {
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .logout-link, .signup-link, .gallery-link, .login-link {
   color: #FAF0CA;
   float: right;
   padding-right: 15px;
+  text-decoration: none;
+}
+
+/* unvisited link */
+.header-text:link, .logout-link:link, .gallery-link:link, .login-link:link, .signup-link:link{
+  color: #FAF0CA;
+  text-decoration: none;
+}
+
+/* visited link */
+.header-text:visited, .logout-link:visited, .gallery-link:visited, .login-link:visited, .signup-link:visited {
+    color: #EDC7CF;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.header-text:hover, .logout-link:hover, .gallery-link:hover, .login-link:hover, .signup-link:hover {
+    color: #FFF4E9;
+    text-decoration: none;
 }

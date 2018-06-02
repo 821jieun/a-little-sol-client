@@ -1,6 +1,13 @@
 .footer {
   background-color: #0D3B66;
   color: #FAF0CA;
+  /* position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;*/
+  padding: 1rem;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .footer-links a {
@@ -10,17 +17,17 @@
 
 /* unvisited link */
 .footer-more-info-sol:link {
-    color: #FFE2D1;
+    color: #FAF0CA;
 }
 
 /* visited link */
 .footer-more-info-sol:visited {
-    color: #E1F0C4;
+    color: #EDC7CF;
 }
 
 /* mouse over link */
 .footer-more-info-sol:hover {
-    color: #6BAB90;
+    color: #FFF4E9;
 }
 
 /* selected link */

@@ -75,7 +75,7 @@ const mapStateToProps = (state) => {
     }
 
     setCanvasHeight() {
-      let height = window.innerHeight;
+      let height = window.innerHeight - 250;
       this.setState({
         height: height
       })

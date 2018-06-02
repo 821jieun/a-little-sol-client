@@ -4,6 +4,7 @@ import Input from '../Input/Input';
 import {login} from '../../actions/index';
 import {required, nonEmpty} from '../../validators';
 import { Redirect } from 'react-router-dom';
+import './LoginForm.css';
 
 export class LoginForm extends React.Component {
     constructor(props) {

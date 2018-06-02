@@ -12,7 +12,6 @@ export default class LandingPageContent extends React.Component {
       <div className="landing-page-content">
       <main role="main">
             <header role="banner">
-              <h2>the art of an idea</h2>
               <p>"The idea becomes a machine that makes the art." -Sol LeWitt (1965)</p>
             </header>
             <section>
