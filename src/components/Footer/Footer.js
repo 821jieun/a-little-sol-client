@@ -6,8 +6,7 @@ export default class Footer extends React.Component {
     return (
       <div className="footer">
         <ul className="footer-links">
-          <li>learn more about sol lewitt</li>
-          
+          <p><a className="footer-more-info-sol" href="https://fraenkelgallery.com/tag/sol-lewitt" target="_blank" alt="a link to more information about sol lewitt">learn more about sol lewitt</a></p>
         </ul>
       </div>
     )

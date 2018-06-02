@@ -2,3 +2,28 @@
   background-color: #0D3B66;
   color: #FAF0CA;
 }
+
+.footer-links a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* unvisited link */
+.footer-more-info-sol:link {
+    color: #FFE2D1;
+}
+
+/* visited link */
+.footer-more-info-sol:visited {
+    color: #E1F0C4;
+}
+
+/* mouse over link */
+.footer-more-info-sol:hover {
+    color: #6BAB90;
+}
+
+/* selected link */
+.footer-more-info-sol:active {
+    color: #5E4C5A;
+}

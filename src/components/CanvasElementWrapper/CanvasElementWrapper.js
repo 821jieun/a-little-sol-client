@@ -32,7 +32,6 @@ const mapStateToProps = (state) => {
       this.screenResize();
       this.updateCanvas();
       this.mobileTouchListeners();
-      this.keyboardListeners()
     }
 
     componentDidUpdate() {
