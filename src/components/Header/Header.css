@@ -26,21 +26,31 @@ h1.header-text {
 }
 
 .logout-link, .signup-link, .gallery-link, .login-link {
-  color: #FAF0CA;
+  color: #90a4ae;
+  /* color: #FAF0CA; */
   float: right;
   padding-right: 15px;
   text-decoration: none;
 }
 
+@media screen and (min-width: 720px) {
+
+  .logout-link, .signup-link, .gallery-link, .login-link {
+    font-size: 20px;
+  }
+}
+
 /* unvisited link */
 .header-text:link, .logout-link:link, .gallery-link:link, .login-link:link, .signup-link:link{
-  color: #FAF0CA;
+  color: #90a4ae;
+  /* color: #FAF0CA; */
   text-decoration: none;
 }
 
 /* visited link */
 .header-text:visited, .logout-link:visited, .gallery-link:visited, .login-link:visited, .signup-link:visited {
-    color: #EDC7CF;
+    color: #cfd8dc;
+    /* color: #EDC7CF; */
     text-decoration: none;
 }
 

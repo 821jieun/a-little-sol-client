@@ -1,9 +1,7 @@
 .App {
   text-align: center;
   font-family: Georgia;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
 }
