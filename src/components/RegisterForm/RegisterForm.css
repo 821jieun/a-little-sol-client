@@ -1,0 +1,11 @@
+.register {
+
+    margin: 0 auto;
+    margin-top: 50px;
+    font-family: 'Merriweather', serif;
+    outline: 1px dotted black;
+    width: 65%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
