@@ -1,0 +1,22 @@
+.gallery {
+  text-align: center;
+}
+ul.gallery-drawings {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.drawing img {
+  outline: 1px dotted black;
+}
+
+.delete-button {
+  font-family: 'Merriweather', serif;
+  /* background: black;
+  color: white;
+  height: 50px; */
+  /* margin-right: 10px; */
+  width: 25%;
+  margin-left: 5px;
+  border-radius: 30%;
+}

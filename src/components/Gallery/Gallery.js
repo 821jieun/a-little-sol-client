@@ -3,6 +3,7 @@ import './Gallery.css';
 import { connect } from 'react-redux';
 import {getGallery, deleteCanvas} from '../../actions/index';
 
+
 export const mapStateToProps = (state) => {
   return {
     drawings: state.sol.drawings
@@ -25,9 +26,9 @@ export class Gallery extends React.Component {
       const instruction = drawing.instruction;
       const image = `${drawing.canvas}`;
       const id = drawing.id
-      return <li key={index}><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>
+      return <li key={index} className="saved-canvases"><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>
       {instruction}
-      <button onClick={this.handleDeleteClick.bind(this, id)}>delete</button></li>
+      <button className="delete-button" onClick={this.handleDeleteClick.bind(this, id)}>delete</button></li>
     });
 
     return (
