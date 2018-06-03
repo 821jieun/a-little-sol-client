@@ -31,6 +31,7 @@ canvas {
   margin-right: 10px;
   width: 15%;
   border-radius: 30%;
+
 }
 
 .red-button {
@@ -51,6 +52,14 @@ canvas {
   margin-right: 10px;
   width: 15%;
   border-radius: 30%;
+
+}
+
+@media screen and (min-width: 500px) {
+
+  .green-button, .black-button, .yellow-button, .red-button, .blue-button {
+    font-size: 15px;
+  }
 }
 
 .save-button {
@@ -59,10 +68,10 @@ canvas {
   height: 50px;
   color: #0D3B66;
   background: #FFFC99;
-  /* width: 30%; */
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
+  margin-right: 10px;
 }
 
 .reset-button {
@@ -71,7 +80,6 @@ canvas {
   height: 50px;
   color: #0D3B66;
   background: #FFFC99;
-  /* width: 30%; */
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;

@@ -1,6 +1,9 @@
 .header {
-  background-color: #0D3B66;
+
+  /* background-color: #0D3B66; */
+  background: linear-gradient(#FAF0CA, #0D3B66);
   color: #FAF0CA;
+  text-shadow:2px 2px #0D3B66;
   width: 100%;
   overflow: hidden;
   font-family: Georgia, serif;

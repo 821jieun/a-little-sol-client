@@ -1,7 +1,10 @@
 .footer {
   font-family: 'Merriweather', serif;
-  background-color: #0D3B66;
+  /* background-color: #0D3B66; */
+  background: linear-gradient(#0D3B66, #FAF0CA);
+
   color: #FAF0CA;
+  text-shadow:2px 2px #0D3B66;
   /* position: absolute;
   right: 0;
   bottom: 0;
