@@ -65,7 +65,7 @@ export class LoginForm extends React.Component {
                       Log in
                   </button>
               </form>
-              <div>
+              <div className="demo-info">
                 <p>demo user: test</p>
                 <p>demo password: test123456</p>
               </div>

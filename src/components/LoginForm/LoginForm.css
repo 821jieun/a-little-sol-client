@@ -1,6 +1,6 @@
 .login-form {
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 80px;
   font-family: 'Merriweather', serif;
   outline: 1px dotted black;
   width: 65%;
@@ -8,6 +8,7 @@
   padding-bottom: 10px;
 }
 
-.login-form input {
-    /* border-radius: 30%; */
+.demo-info {
+  font-family: 'Merriweather', serif;
+
 }
