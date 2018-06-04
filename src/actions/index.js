@@ -30,7 +30,7 @@ export const saveCanvasToGallery = (instruction, canvas) => {
       canvas: canvas
     })
     .then((response) => {
-      console.log(response, 'response inside saveCanvasToCallery')
+      console.log('Saved canvas to gallery.')
     })
     .catch(function (error) {
       console.log(error);
@@ -176,7 +176,6 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then((res) => {
-              console.log(res, 'res here')
                  const token = res.data.token;
                  const username = res.data.username;
                  return storeAuthInfo(token, username, dispatch)
