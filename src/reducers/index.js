@@ -21,9 +21,9 @@ const initialState = {
 };
 
 //TODO: demo login account, tests
-//TODO: css!!!
+//TODO: tests
 //TODO: a11y
-//TODO: why does touch mobile screen draw so much below the "finger"
+//TODO: ***why does touch mobile screen draw so much below the "finger"
 
 export const solReducer = (state=initialState, action) => {
   const newState = Object.assign({}, state);
