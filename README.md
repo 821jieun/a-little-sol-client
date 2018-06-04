@@ -1,4 +1,4 @@
-# a-little-sol
+# a little sol
 An interactive drawing application that introduces users to the conceptual artist Sol LeWitt.
 
 ## motivation
