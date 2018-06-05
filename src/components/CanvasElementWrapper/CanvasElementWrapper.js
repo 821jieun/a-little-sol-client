@@ -3,6 +3,8 @@ import React from 'react';
 import {saveCanvasToGallery, screenResize} from '../../actions';
 import { connect } from 'react-redux';
 import './CanvasElementWrapper.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const mapStateToProps = (state) => {
 
@@ -41,7 +43,7 @@ const mapStateToProps = (state) => {
       this.mobileTouchListeners();
     }
 
-//
+    notify = () => toast("Your canvas has been saved !");
     //for mobile touch functionality
     mobileTouchListeners() {
       const canvas = this.refs.canvas;
@@ -76,7 +78,7 @@ const mapStateToProps = (state) => {
     }
 
     setCanvasHeight() {
-      let height = window.innerHeight;
+      let height = window.innerHeight -300;
       this.setState({
         height: height
       })
@@ -138,6 +140,10 @@ const mapStateToProps = (state) => {
     //handle click on save button
     handleClick(event) {
       event.preventDefault();
+      this.notify();
+      this.setState({
+        clearRect: true
+      })
       const canvasToSaveToGallery = this.refs.canvas;
       const canvasAsDataUrl = canvasToSaveToGallery.toDataURL();
       this.saveCanvasToGallery(this.props.selectedInstructionText, canvasAsDataUrl);
@@ -181,7 +187,9 @@ const mapStateToProps = (state) => {
             tabindex="0">Unfortunately, your browser does not support HTML5 Canvas.
           </canvas>
           <div className="save-and-reset-buttons">
+
             <button id="save" className="save-button" onClick={this.handleClick.bind(this)}>save</button>
+            <ToastContainer />
             <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
               <div className="color-buttons">
                 <button className="black-button" onClick={this.handleColorClick.bind(this, 'black')}>black</button>
