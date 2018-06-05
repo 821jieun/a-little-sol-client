@@ -145,6 +145,7 @@ const mapStateToProps = (state) => {
 
     handleResetClick(event) {
       event.preventDefault();
+          debugger;
       this.setState({
         clearRect: true
       })
@@ -152,7 +153,9 @@ const mapStateToProps = (state) => {
 
     handleColorClick(color, event) {
       event.preventDefault();
+
       this.setState({
+        clearRect: false,
         strokeStyle: color
       })
 
