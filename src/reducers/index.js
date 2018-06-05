@@ -20,9 +20,6 @@ const initialState = {
   ]
 };
 
-//TODO: demo login account, tests
-//TODO: tests
-//TODO: a11y
 //TODO: ***why does touch mobile screen draw so much below the "finger"
 
 export const solReducer = (state=initialState, action) => {

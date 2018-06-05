@@ -145,7 +145,6 @@ const mapStateToProps = (state) => {
 
     handleResetClick(event) {
       event.preventDefault();
-          debugger;
       this.setState({
         clearRect: true
       })
