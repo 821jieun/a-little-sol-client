@@ -21,7 +21,7 @@ export class Header extends React.Component {
         if (this.props.currentUser) {
             return (
               <div className="header">
-                <Link to="/" role="link" aria-label="return to landing page"><h1 className="header-text">a little sol</h1></Link>
+                <Link to="/" role="link" className="no-underline" aria-label="return to landing page"><h1 className="header-text">a little sol</h1></Link>
                 <h2>(the art of an idea)</h2>
                 <Link to="/" role="link" aria-label="logout and return to landing page" onClick={() => this.logOut()} className="logout-link">logout</Link>
                 <Link to="/gallery" role="link" aria-label="go to gallery" className="gallery-link">my gallery</Link>

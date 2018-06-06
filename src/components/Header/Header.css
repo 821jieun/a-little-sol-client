@@ -1,16 +1,18 @@
 .header {
-
-  /* background-color: #0D3B66; */
   background: linear-gradient(#FAF0CA, #0D3B66);
   color: #FAF0CA;
   text-shadow:2px 2px #0D3B66;
   width: 100%;
   overflow: hidden;
   font-family: Georgia, serif;
-  /* font-family: 'Merriweather', serif; */
-  /* font-family: 'Cabin Sketch', cursive; */
-
   list-style-type: none;
+  text-decoration: none;
+}
+
+.header a {
+  text-decoration: none;
+}
+.no-underline {
   text-decoration: none;
 }
 
@@ -27,7 +29,6 @@ h1.header-text {
 
 .logout-link, .signup-link, .gallery-link, .login-link {
   color: #90a4ae;
-  /* color: #FAF0CA; */
   float: right;
   padding-right: 15px;
   text-decoration: none;
