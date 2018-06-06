@@ -1,10 +1,6 @@
 .table {
-  /* display: table; */
   background-color:#FAF0CA;
-  /* padding: 5px;
-  margin: 0 auto; */
   text-align: center;
-  /* width: 100%; */
 }
 
 .options ul {
@@ -18,22 +14,6 @@
   color: #0D3B66;
 }
 
-/* unvisited link */
-/* .options a:link {
-    color: #121420;
-} */
-
-/* visited link */
-/* .options a:visited {
-    color: #121420;
-} */
-
-/* mouse over link */
-/* .options a:hover {
-    color: #FFF4E9;
-} */
-
-/* selected link */
-/* .options a:active {
-    color: #5E4C5A;
-} */
+.options a {
+  outline-color: purple
+}
