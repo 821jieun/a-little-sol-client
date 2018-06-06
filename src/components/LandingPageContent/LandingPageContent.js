@@ -39,6 +39,7 @@ export default class LandingPageContent extends React.Component {
               <header>
                   <h3>Start Drawing Now</h3>
               </header>
+      
               <RegisterForm />
             </section>
           </main>
