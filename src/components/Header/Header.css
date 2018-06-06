@@ -1,7 +1,9 @@
 .header {
-  background: linear-gradient(#FAF0CA, #0D3B66);
+  /* background: linear-gradient(#FAF0CA, #0D3B66); */
+  background: linear-gradient(#FAF0CA, #4a148c);
   color: #FAF0CA;
   text-shadow:2px 2px #0D3B66;
+
   width: 100%;
   overflow: hidden;
   font-family: Georgia, serif;
@@ -20,14 +22,16 @@
   list-style-type: none;
   text-decoration: none;
   color: #FAF0CA;
+  letter-spacing: 5px;
+
 }
 
-h1.header-text {
-  list-style-type: none;
-  text-decoration: none;
+.header h2 {
+  letter-spacing: 3px;
 }
-
 .logout-link, .signup-link, .gallery-link, .login-link {
+  letter-spacing: 3px;
+
   color: #90a4ae;
   float: right;
   padding-right: 15px;

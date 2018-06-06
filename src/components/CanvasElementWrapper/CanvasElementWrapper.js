@@ -187,17 +187,17 @@ const mapStateToProps = (state) => {
             tabindex="0">Unfortunately, your browser does not support HTML5 Canvas.
           </canvas>
           <div className="save-and-reset-buttons">
-
             <button id="save" className="save-button" onClick={this.handleClick.bind(this)}>save</button><ToastContainer />
             <button className="reset-button" onClick={this.handleResetClick.bind(this)}>reset</button>
-              <div className="color-buttons">
+          </div>
+            <div className="color-buttons">
                 <button className="black-button" onClick={this.handleColorClick.bind(this, 'black')}>black</button>
                 <button className="blue-button" onClick={this.handleColorClick.bind(this, 'blue')}>blue</button>
                 <button className="yellow-button" onClick={this.handleColorClick.bind(this, 'yellow')}>yellow</button>
                 <button className="red-button" onClick={this.handleColorClick.bind(this, 'red')}>red</button>
                 <button className="green-button" onClick={this.handleColorClick.bind(this, 'green')}>green</button>
               </div>
-          </div>
+
         </div>
       )
     }
