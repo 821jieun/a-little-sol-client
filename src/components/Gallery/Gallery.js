@@ -27,13 +27,15 @@ export class Gallery extends React.Component {
       const image = `${drawing.canvas}`;
       const id = drawing.id
       return <li key={index} className="saved-canvases"><img className="drawing" alt={instruction} index={index} data-id={id} src={image}/>
-      {instruction}
-      <button className="delete-button" onClick={this.handleDeleteClick.bind(this, id)}>delete</button></li>
+        <div className="instruction-and-delete-button">
+          <p className="instruction">{instruction}</p>
+          <button className="delete-button" onClick={this.handleDeleteClick.bind(this, id)}>delete</button>
+        </div></li>
+
     });
 
     return (
       <div className="gallery">
-        <h2>My Gallery</h2>
         <ul className="gallery-drawings">
           {galleryOptions}
         </ul>

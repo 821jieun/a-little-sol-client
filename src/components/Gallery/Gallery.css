@@ -1,22 +1,58 @@
 .gallery {
   text-align: center;
 }
+
+
+
 ul.gallery-drawings {
-    list-style-type: none;
-    text-decoration: none;
+  list-style-type: none;
 }
 
-.drawing img {
+img.drawing {
   outline: 1px dotted black;
+  width: 45%;
+  /* float: left; */
+  margin: 0 auto;
+}
+
+.instruction {
+
+}
+
+.instruction-and-delete-button {
+  font-family: 'Merriweather', serif;
+  width: 50%;
+  margin: 0 auto;
+}
+
+li.saved-canvases {
+  /* outline: 2px solid black; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* text-align: center;
+  margin: 0 auto; */
 }
 
 .delete-button {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
   font-family: 'Merriweather', serif;
-  /* background: black;
-  color: white;
-  height: 50px; */
-  /* margin-right: 10px; */
-  width: 25%;
-  margin-left: 5px;
   border-radius: 30%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  outline: none;
+  font-size: 10px;
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: white;
 }
