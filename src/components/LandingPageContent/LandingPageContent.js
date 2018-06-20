@@ -1,7 +1,6 @@
 import React from 'react';
 import './LandingPageContent.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
-var wallDrawing46 = require('./images/wallDrawing46.jpg');
 var wallDrawing65 = require('./images/wallDrawing65.png');
 var wallDrawing1112 = require('./images/wallDrawing1112.png');
 
@@ -18,7 +17,6 @@ export default class LandingPageContent extends React.Component {
               <header>
                   <h3 className="landing-page-header">Explore conceptual art</h3>
               </header>
-              <img src={wallDrawing46} alt="sol le witt's wall drawing #46"/>
               <p>Sol LeWitt's belief in the artist as a generator of ideas was instrumental in the development of Postmodernism and Conceptual art. In 1968, he began conceiving instructions for drawn two-dimensional works of art that left much open to interpretation.</p>
             </section>
             <section>

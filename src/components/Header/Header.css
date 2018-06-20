@@ -1,7 +1,11 @@
 .header {
-  background: linear-gradient(#FAF0CA, #4a148c);
-  color: #FAF0CA;
-  text-shadow:2px 2px #0D3B66;
+  /* background: linear-gradient(#FAF0CA, #4a148c); */
+  width: 100%;
+  background-image:url("images.jpg");
+  /* color: #FAF0CA; */
+  color: white;
+  /* text-shadow:2px 2px #0D3B66; */
+  text-shadow:2px 2px black;
   width: 100%;
   overflow: hidden;
   font-family: Georgia, serif;
@@ -20,7 +24,8 @@
 .header-text {
   list-style-type: none;
   text-decoration: none;
-  color: #FAF0CA;
+  color: white;
+  /* color: #FAF0CA; */
   letter-spacing: 5px;
   font-size: 40px;
 }
@@ -31,7 +36,10 @@
 .logout-link, .signup-link, .gallery-link, .login-link {
   letter-spacing: 3px;
   padding-bottom: 5px;
-  color: #90a4ae;
+  color: white;
+  text-shadow:1px 1px black;
+
+  /* color: #90a4ae; */
   float: right;
   padding-right: 15px;
   text-decoration: none;
@@ -46,13 +54,17 @@
 
 /* unvisited link */
 .header-text:link, .logout-link:link, .gallery-link:link, .login-link:link, .signup-link:link{
-  color: #90a4ae;
+  /* color: #90a4ae; */
+  color: white;
+  text-shadow:1px 1px black;
+
   text-decoration: none;
 }
 
 /* visited link */
 .header-text:visited, .logout-link:visited, .gallery-link:visited, .login-link:visited, .signup-link:visited {
-    color: #cfd8dc;
+    /* color: #cfd8dc; */
+    color: black;
     text-decoration: none;
     outline: purple;
 }

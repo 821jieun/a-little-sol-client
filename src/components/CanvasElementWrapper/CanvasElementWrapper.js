@@ -48,10 +48,10 @@ const mapStateToProps = (state) => {
     mobileTouchListeners() {
       const canvas = this.refs.canvas;
       const ctx = canvas.getContext("2d");
-      const r = 5; // draw radius
+      const r = 2; // draw radius
       let lastPt = null;
       ctx.lineWidth = r * 2;
-      ctx.lineCap = "round";//butt||square
+      ctx.lineCap = "butt";//butt||square||round
       ctx.strokeStyle = this.state.strokeStyle;
 
       canvas.addEventListener("touchmove", draw, false);
