@@ -1,13 +1,9 @@
 .footer {
   font-family: 'Merriweather', serif;
-  /* background: linear-gradient(#0D3B66, #FAF0CA); */
-  /* background: linear-gradient(#4a148c, #FAF0CA); */
   width: 100%;
   background-image:url("image.jpg");
   color: white;
   text-shadow:1px 1px black;
-  /* color: #FAF0CA; */
-  /* text-shadow:2px 2px #0D3B66; */
   position:fixed;
   bottom:0;
   left:0;
@@ -20,6 +16,7 @@
 .footer-links a {
   list-style-type: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 /* unvisited link */
